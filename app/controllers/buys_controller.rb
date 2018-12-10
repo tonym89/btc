@@ -1,0 +1,29 @@
+class BuysController < ApplicationController
+
+  def index
+    @buys = Buy.all
+  end
+
+  def show
+    @buy = Buy.find(params[:id])
+  end
+
+  def new
+    @buy = Buy.new
+  end
+
+  def create
+    @buy = Buy.new(buy_params)
+    @buy.user = current_user
+    @buy.save
+    redirect_to buy_path(@buy)
+  end
+
+  private
+
+  def buy_params
+    params.require(:buy).permit(:quantity)
+  end
+
+
+end
