@@ -19,6 +19,15 @@ class BuysController < ApplicationController
     redirect_to buy_path(@buy)
   end
 
+  def edit
+    @buy = Buy.find(params[:id])
+  end
+
+  def update
+    @buy = Buy.find(params[:id])
+    @buy.update(buy_params)
+  end
+
   private
 
   def buy_params
