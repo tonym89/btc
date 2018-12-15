@@ -1,2 +1,31 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
+
+
+<h2>bitcoin price: </h2><h2 id = "buy1"><%= Buy.buy_price %></h2>
+
+<script>
+    window.onload = function() {
+  setInterval(increment, 10000);
+};
+
+var n = 0;
+const buy1 = document.getElementById("buy1");
+
+function increment(){
+  fetch("https://api.kraken.com/0/public/Ticker?pair=XXBTZEUR")
+  .then(response => response.json())
+  .then((data) => {
+    // console.log(data.result.XXBTZEUR.c[0]);
+    const price = data.result.XXBTZEUR.c[0];
+    console.log(price);
+    buy1.innerHTML = price;
+  });
+
+  n++;
+  return n;
+  console.log("Hello world!");
+  console.log(n);
+}
+
+  </script>
