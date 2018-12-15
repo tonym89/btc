@@ -16,6 +16,10 @@ gem 'sassc-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
+gem 'figaro'
+
+gem 'kraken_ruby'
+gem 'kraken_client', '~> 1.3.0'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
