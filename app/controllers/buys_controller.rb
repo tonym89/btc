@@ -15,6 +15,8 @@ class BuysController < ApplicationController
   def create
     @buy = Buy.new(buy_params)
     @buy.user = current_user
+    @buy.price = Buy.buy_price
+    @buy.status = 0
     @buy.save
     redirect_to buy_path(@buy)
   end
