@@ -21,7 +21,8 @@ gem 'figaro'
 gem 'kraken_ruby'
 gem 'kraken_client', '~> 1.3.0'
 
-gem 'dotenv-rails', groups: [:development, :test]
+gem 'cloudinary'
+gem 'carrierwave', '~> 1.2'
 
 
 group :development do
