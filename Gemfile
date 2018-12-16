@@ -21,6 +21,9 @@ gem 'figaro'
 gem 'kraken_ruby'
 gem 'kraken_client', '~> 1.3.0'
 
+gem 'dotenv-rails', groups: [:development, :test]
+
+
 group :development do
   gem 'web-console', '>= 3.3.0'
 end
