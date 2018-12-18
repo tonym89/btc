@@ -1,3 +1,5 @@
+<%= cl_image_tag(@user.document,
+      width: 400, height: 300, crop: :fill) %>
 <%= cl_image_tag(@user.selfie,
       width: 400, height: 300, crop: :fill) %>
 
@@ -12,8 +14,9 @@
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     <% end %>
-
-        <%= f.input :selfie %>
+    <%= f.input :document %>
+    <%= f.input :document_cache, as: :hidden %>
+    <%= f.input :selfie %>
     <%= f.input :selfie_cache, as: :hidden %>
     <%= f.input :password,
                 hint: "leave it blank if you don't want to change it",
