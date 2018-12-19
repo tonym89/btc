@@ -17,7 +17,7 @@ protected
   end
 
   def account_update_params
-    params.require(:user).permit(:email, :password, :password_confirmation, :selfie, :document, :current_password)
+    params.require(:user).permit(:email, :password, :password_confirmation, :selfie, :document, :current_password, :kyc_status)
   end
 
 end
