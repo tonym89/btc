@@ -1,15 +1,17 @@
 class BuysController < ApplicationController
 
   def index
-    @buys = Buy.all
+    @buys = policy_scope(Buy)
   end
 
   def show
     @buy = Buy.find(params[:id])
+    authorize @buy
   end
 
   def new
     @buy = Buy.new
+    authorize @buy
   end
 
   def create
@@ -17,12 +19,14 @@ class BuysController < ApplicationController
     @buy.user = current_user
     @buy.price = Buy.buy_price
     @buy.status = 0
+    authorize @buy
     @buy.save
     redirect_to buy_path(@buy)
   end
 
   def edit
     @buy = Buy.find(params[:id])
+    authorize @buy
   end
 
   def update
