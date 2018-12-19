@@ -14,7 +14,7 @@ class BuyPolicy < ApplicationPolicy
   end
 
   def create?
-    true
+    user.kyc_status
   end
 
   def index?
