@@ -1,5 +1,4 @@
-<% if current_user %>
-<% if current_user.admin? == true %>
+<% if current_user.try(:admin?) %>
 
 <%= @user = User.all %>
   <% @user.each do |user| %>
@@ -13,8 +12,8 @@
 <p>Find me in app/views/pages/home.html.erb</p>
 
 <% end %>
-<% else %>
-<% end %>
+
+
 
 
 <h2>bitcoin price: </h2><h2 id = "buy1"><%= Buy.buy_price %></h2>

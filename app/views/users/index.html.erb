@@ -1,0 +1,10 @@
+<h1>Users#index</h1>
+<p>Find me in app/views/users/index.html.erb</p>
+
+<% @users.each do |user| %>
+  <h2><%= user.email %></h2>
+  <p><%= user.id %></p>
+  <p><%= user.kyc_status %></p>
+  <p><%= link_to "Edit", edit_user_path(user.id) %></p>
+<% end %>
+
