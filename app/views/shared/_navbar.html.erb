@@ -10,8 +10,8 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "Host", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "My Trades", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Buy bitcoin", new_buy_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "My Trades", buys_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "My Account", "#", class: "navbar-wagon-item navbar-wagon-link" %>
 
       <!-- Avatar with dropdown menu -->
