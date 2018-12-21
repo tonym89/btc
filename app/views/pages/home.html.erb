@@ -1,3 +1,24 @@
+<h1 text-align="center">Pick Currency</h1>
+
+<!-- Flickity HTML init -->
+<div class="carousel"
+  data-flickity='{ "wrapAround": true }'>
+  <div class="carousel-cell">Bitcoin</div>
+  <div class="carousel-cell">Ethereum</div>
+  <div class="carousel-cell">Bitcoin Cash</div>
+  <div class="carousel-cell">Ripple</div>
+  <div class="carousel-cell">EOS</div>
+</div>
+
+
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+<br>
+<br>
+<br>
 <% if current_user.try(:admin?) %>
 
 <%= @user = User.all %>
@@ -13,7 +34,17 @@
 
 <% end %>
 
+<link rel="stylesheet" href="/path/to/flickity.css" media="screen">
+<script src="/path/to/flickity.pkgd.min.js"></script>
 
+
+<script>var elem = document.querySelector('.main-carousel');
+var flkty = new Flickity( elem, {
+  // options
+  cellAlign: 'left',
+  contain: true
+});
+</script>
 
 
 <h2>bitcoin price: </h2><h2 id = "buy1"><%= Buy.buy_price %></h2>
