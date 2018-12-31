@@ -1,6 +1,7 @@
+<!--
+  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css"> -->
 
-  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
-
+<!-- <h2><i class="kmd.svg"></i></h2> -->
 
 <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 
@@ -10,11 +11,24 @@
 <!-- Flickity HTML init -->
 <div class="carousel"
   data-flickity='{ "wrapAround": true }'>
-  <div class="carousel-cell">Bitcoin</div>
-  <div class="carousel-cell">Ethereum</div>
+  <div class="carousel-cell">
+    <!-- <h2><i class="fab fa-bitcoin fa-2x"></i></h2> -->
+    <%= image_tag "btc.svg", alt: "Bitcoin Icon", width: 70 %>
+    <p>Bitcoin</p>
+
+  </div>
+  <div class="carousel-cell">
+  <!--   <h2><i class="fab fa-ethereum fa-2x"></i></h2> -->
+  <%= image_tag "eth.svg", alt: "Ethereum Icon", width: 70 %>
+    <p>Ethereum</p>
+  </div>
   <div class="carousel-cell">Bitcoin Cash</div>
   <div class="carousel-cell">Ripple</div>
-  <div class="carousel-cell">EOS</div>
+  <div class="carousel-cell">
+    <%= image_tag "eos.svg", alt: "Bitcoin Icon", width: 70 %>
+    <p>EOS</p>
+  </div>
+
 </div>
 
 
@@ -34,8 +48,6 @@
 <% end %>
 
 <% else %>
-
-<p>Find me in app/views/pages/home.html.erb</p>
 
 <% end %>
 
