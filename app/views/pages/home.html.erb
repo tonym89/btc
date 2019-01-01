@@ -15,18 +15,27 @@
     <!-- <h2><i class="fab fa-bitcoin fa-2x"></i></h2> -->
     <%= image_tag "btc.svg", alt: "Bitcoin Icon", width: 70 %>
     <p>Bitcoin</p>
+    <p>Buy £<span id = "buy"></span> / Sell £<span id = "sell"></span></p>
+    <button type="button" class="btn btn-primary">Buy</button>
+    <button type="button" class="btn btn-primary">Sell</button>
 
   </div>
   <div class="carousel-cell">
   <!--   <h2><i class="fab fa-ethereum fa-2x"></i></h2> -->
   <%= image_tag "eth.svg", alt: "Ethereum Icon", width: 70 %>
     <p>Ethereum</p>
+    <p>Buy £<span id = "ethbuy"></span> / Sell £<span id = "ethsell"></span></p>
+    <button type="button" class="btn btn-primary">Buy</button>
+    <button type="button" class="btn btn-primary">Sell</button>
   </div>
   <div class="carousel-cell">Bitcoin Cash</div>
   <div class="carousel-cell">Ripple</div>
   <div class="carousel-cell">
-    <%= image_tag "eos.svg", alt: "Bitcoin Icon", width: 70 %>
+    <%= image_tag "eos.svg", alt: "EOS Icon", width: 70 %>
     <p>EOS</p>
+    <p>Buy £<span id = "eosbuy"></span> / Sell £<span id = "eossell"></span></p>
+    <button type="button" class="btn btn-primary">Buy</button>
+    <button type="button" class="btn btn-primary">Sell</button>
   </div>
 
 </div>
@@ -64,27 +73,102 @@ var flkty = new Flickity( elem, {
 <h2>bitcoin price: </h2><h2 id = "buy1"><%= Buy.buy_price %></h2>
 
 <script>
+  document.addEventListener("DOMContentLoaded", function() {
+  btcprice();
+});
+
     window.onload = function() {
-  setInterval(increment, 10000);
+  setInterval(btcprice, 10000);
 };
 
 var n = 0;
-const buy1 = document.getElementById("buy1");
+const buy = document.getElementById("buy");
+const sell = document.getElementById("sell");
 
-function increment(){
+
+function btcprice(){
   fetch("https://api.kraken.com/0/public/Ticker?pair=XXBTZEUR")
   .then(response => response.json())
   .then((data) => {
     // console.log(data.result.XXBTZEUR.c[0]);
     const price = data.result.XXBTZEUR.c[0];
-    console.log(price);
-    buy1.innerHTML = price;
+    const pbuy = (parseFloat(price)*1.02).toFixed(2);
+    const psell = (parseFloat(price)*0.98).toFixed(2);
+    // console.log(p);
+    // console.log(typeof p)
+    buy.innerHTML = pbuy;
+    sell.innerHTML = psell;
   });
+
+
 
   n++;
   return n;
   console.log("Hello world!");
   console.log(n);
 }
+
+  </script>
+
+  <script>
+      document.addEventListener("DOMContentLoaded", function() {
+  ethprice();
+});
+       window.onload = function() {
+  setInterval(ethprice, 10000);
+};
+
+
+const ethbuy =  document.getElementById("ethbuy");
+const ethsell =  document.getElementById("ethsell");
+
+
+  function ethprice(){
+  fetch("https://api.kraken.com/0/public/Ticker?pair=XETHZEUR")
+  .then(response => response.json())
+  .then((data) => {
+    // console.log(data.result.XXBTZEUR.c[0]);
+    const ethprice = data.result.XETHZEUR.c[0];
+    const ethpbuy = (parseFloat(ethprice)*1.02).toFixed(2);
+    const ethpsell = (parseFloat(ethprice)*0.98).toFixed(2);
+    console.log(ethprice);
+    console.log(ethpsell);
+    // console.log(typeof p)
+    ethbuy.innerHTML = ethpbuy;
+    ethsell.innerHTML = ethpsell;
+  });
+  }
+
+  </script>
+
+
+  <script>
+      document.addEventListener("DOMContentLoaded", function() {
+  eosprice();
+});
+       window.onload = function() {
+  setInterval(eosprice, 10000);
+};
+
+
+const eosbuy =  document.getElementById("eosbuy");
+const eossell =  document.getElementById("eossell");
+
+
+  function eosprice(){
+  fetch("https://api.kraken.com/0/public/Ticker?pair=EOSEUR")
+  .then(response => response.json())
+  .then((data) => {
+    // console.log(data.result.XXBTZEUR.c[0]);
+    const eosprice = data.result.EOSEUR.c[0];
+    const eospbuy = (parseFloat(eosprice)*1.02).toFixed(2);
+    const eospsell = (parseFloat(eosprice)*0.98).toFixed(2);
+    console.log(eosprice);
+    console.log(eospsell);
+    // console.log(typeof p)
+    eosbuy.innerHTML = eospbuy;
+    eossell.innerHTML = eospsell;
+  });
+  }
 
   </script>
