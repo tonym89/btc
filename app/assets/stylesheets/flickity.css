@@ -6,19 +6,21 @@ https://flickity.metafizzy.co
 body { font-family: sans-serif; }
 
 .carousel {
-  background: #EEE;
+  background: #FAF9F9;
 }
 
 .carousel-cell {
   width: 28%;
   height: 300px;
   margin-right: 10px;
-  background: transparent;
-  border: 2px solid grey;
+  background: white;
+  /*border: 2px solid grey;*/
   border-radius: 5px;
   text-align: center;
   padding: 20px;
+
   /*counter-increment: gallery-cell;*/
+
 }
 
 .carousel-cell.size-180 { width: 180px; }
@@ -32,4 +34,5 @@ body { font-family: sans-serif; }
   line-height: 200px;
   font-size: 80px;
   color: white;
+  background-color: white;
 }
