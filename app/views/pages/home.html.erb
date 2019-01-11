@@ -16,8 +16,18 @@
     <%= image_tag "btc.svg", alt: "Bitcoin Icon", width: 70 %>
     <p>Bitcoin</p>
     <p>Buy £<span id = "buy"></span> / Sell £<span id = "sell"></span></p>
-    <button type="button" class="btn btn-primary">Buy</button>
-    <button type="button" class="btn btn-primary">Sell</button>
+    <%= link_to "Buy", new_buy_path %>
+    <%= link_to "Sell", new_buy_path %>
+
+
+    <form>
+  Amount in bitcoin:<br>
+  <input type="number" name="amount" placeholder=1><br>
+</form>
+
+<p id="log"></p>
+
+
 
   </div>
   <div class="carousel-cell">
@@ -25,6 +35,7 @@
   <%= image_tag "eth.svg", alt: "Ethereum Icon", width: 70 %>
     <p>Ethereum</p>
     <p>Buy £<span id = "ethbuy"></span> / Sell £<span id = "ethsell"></span></p>
+    <%= link_to "Buy", new_buy_path %>
     <button type="button" class="btn btn-primary">Buy</button>
     <button type="button" class="btn btn-primary">Sell</button>
   </div>
@@ -137,12 +148,24 @@ var flkty = new Flickity( elem, {
 <h2>bitcoin price: </h2><h2 id = "buy1"><%= Buy.buy_price %></h2>
 
 <script>
+  const input = document.querySelector('input');
+  const log = document.getElementById('log');
+  input.addEventListener('keyup', logKey);
+
+  function logKey(e) {
+  log.textContent = ` ${input.value * window.pbuy}`;
+}
+
+  </script>
+
+<script>
   document.addEventListener("DOMContentLoaded", function() {
   btcprice();
+  ethprice();
 });
 
     window.onload = function() {
-  setInterval(btcprice, 10000);
+  setInterval(btcprice, 1000);
 };
 
 var n = 0;
@@ -156,12 +179,13 @@ function btcprice(){
   .then((data) => {
     // console.log(data.result.XXBTZEUR.c[0]);
     const price = data.result.XXBTZEUR.c[0];
-    const pbuy = (parseFloat(price)*1.02).toFixed(2);
+    window.pbuy = (parseFloat(price)*1.025).toFixed(2);
     const psell = (parseFloat(price)*0.98).toFixed(2);
-    // console.log(p);
+    console.log(psell);
     // console.log(typeof p)
-    buy.innerHTML = pbuy;
+    buy.innerHTML = window.pbuy;
     sell.innerHTML = psell;
+    log.textContent = ` ${input.value * window.pbuy}`;
   });
 
 
@@ -179,7 +203,7 @@ function btcprice(){
   ethprice();
 });
        window.onload = function() {
-  setInterval(ethprice, 10000);
+  setInterval(ethprice, 1000);
 };
 
 
@@ -212,6 +236,8 @@ const ethsell =  document.getElementById("ethsell");
 });
        window.onload = function() {
   setInterval(eosprice, 10000);
+  setInterval(ethprice, 10000);
+  setInterval(btcprice, 10000);
 };
 
 
@@ -236,3 +262,4 @@ const eossell =  document.getElementById("eossell");
   }
 
   </script>
+
