@@ -152,6 +152,12 @@ h1 {
 h4 {
   border-bottom: 1px solid #199087;
 }
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+}
 // body {
 //   color: #999999;
 //   font-family: 'Roboto','Helvetica Neue', Helvetica, Arial, sans-serif;

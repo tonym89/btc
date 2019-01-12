@@ -15,17 +15,37 @@
     <!-- <h2><i class="fab fa-bitcoin fa-2x"></i></h2> -->
     <%= image_tag "btc.svg", alt: "Bitcoin Icon", width: 70 %>
     <h4>Bitcoin</h4>
-    <p>Buy £<span id = "buy"></span> / Sell £<span id = "sell"></span></p>
+
+    <div class="grid">
+  <div class="grid-item buy-section">
+    <!-- stuff -->
+    <p>Buy £<span id = "buy"></span></p>
     <%= link_to "Buy", new_buy_path %>
-    <%= link_to "Sell", new_buy_path %>
+     <form>
+  BTC:<br>
+  <input type="text" name="amount" placeholder=1 style="width: 100px; color: black" id="btcquantity"><br>
+</form>
 
-
-    <form>
-  Amount in bitcoin:<br>
-  <input type="number" name="amount" placeholder=1><br>
+<form>
+  £:<br>
+  <input type="text" name="amount" placeholder=1 style="width: 100px; color: black" id="btcbuyprice"><br>
 </form>
 
 <p id="log"></p>
+  </div>
+  <div class="grid-item sell-section">
+    <!-- stuff -->
+    <p>Sell £<span id = "sell"></span></p>
+    <%= link_to "Sell", new_buy_path %>
+  </div>
+
+  </div>
+    <!-- <p>Buy £<span id = "buy"></span> / Sell £<span id = "sell"></span></p> -->
+ <!--    <%= link_to "Buy", new_buy_path %>
+    <%= link_to "Sell", new_buy_path %> -->
+
+
+
 
 
 
@@ -148,15 +168,26 @@ var flkty = new Flickity( elem, {
 <h2>bitcoin price: </h2><h2 id = "buy1"><%= Buy.buy_price %></h2>
 
 <script>
-  const input = document.querySelector('input');
-  const log = document.getElementById('log');
-  input.addEventListener('keyup', logKey);
+  const btcquantity = document.getElementById('btcquantity')
+  const btcbuyprice = document.getElementById('btcbuyprice');
+
+  btcquantity.addEventListener('keyup', logKey);
 
   function logKey(e) {
-  log.textContent = ` ${input.value * window.pbuy}`;
+  // btcbuyprice.textContent = ` ${btcquantity.value * window.pbuy}`;
+  btcbuyprice.value = ` ${btcquantity.value * window.pbuy}`;
 }
 
+  btcbuyprice.addEventListener('keyup', changeQuantity);
+
+  function changeQuantity(e) {
+  // btcbuyprice.textContent = ` ${btcquantity.value * window.pbuy}`;
+  btcquantity.value = ` ${btcbuyprice.value / window.pbuy}`;
+}
+
+
   </script>
+
 
 <script>
   document.addEventListener("DOMContentLoaded", function() {
@@ -185,7 +216,7 @@ function btcprice(){
     // console.log(typeof p)
     buy.innerHTML = window.pbuy;
     sell.innerHTML = psell;
-    log.textContent = ` ${input.value * window.pbuy}`;
+    btcbuyprice.value = ` ${btcquantity.value * window.pbuy}`;
   });
 
 
