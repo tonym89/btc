@@ -17,32 +17,51 @@
     <h4>Bitcoin</h4>
 
     <div class="grid">
-  <div class="grid-item buy-section">
-    <!-- stuff -->
-    <p>Buy £<span id = "buy"></span></p>
-    <%= link_to "Buy", new_buy_path %>
-     <form>
-  BTC:<br>
-  <input type="text" name="amount" placeholder=1 style="width: 100px; color: black" id="btcquantity"><br>
-</form>
+      <div class="grid-item buy-section">
+        <!-- stuff -->
+        <p>Buy Price:</p><p>£<span id = "buy"></span></p>
+        <form>
+          BTC:<br>
+          <input type="text" name="amount" value=1 text-align="right" style="width: 100px; color: black" id="btcquantity"><br>
+        </form>
 
-<form>
-  £:<br>
-  <input type="text" name="amount" placeholder=1 style="width: 100px; color: black" id="btcbuyprice"><br>
-</form>
+        <form>
+          £:<br>
+          <input type="text" name="amount" style="width: 100px; color: black" id="btcbuyprice"><br>
+        </form>
+        <br>
 
-<p id="log"></p>
+
+        <%= link_to "Buy Bitcoin", new_buy_path, :style=>'color: white; background-color: #199087; padding: 3px 8px 3px 8px;
+  border-top: 1px solid #199087;
+  border-right: 1px solid #199087;
+  border-bottom: 1px solid #199087;
+  border-left: 1px solid #199087;
+  border-radius: 5px;' %>
+
+      </div>
+
+      <div class="grid-item sell-section">
+        <p>Sell Price:</p><p>£<span id = "sell"></span></p>
+        <form>
+          BTC:<br>
+          <input type="text" name="amount" value=1 style="width: 100px; color: black" id="btcsellquantity"><br>
+        </form>
+
+        <form>
+          £:<br>
+          <input type="text" name="amount" style="width: 100px; color: black" id="btcsellprice"><br>
+        </form>
+        <br>
+        <%= link_to "Sell Bitcoin", new_buy_path, :style=>'color: white; background-color: #199087; padding: 2px 6px 2px 6px;
+  border-top: 1px solid #199087;
+  border-right: 1px solid #199087;
+  border-bottom: 1px solid #199087;
+  border-left: 1px solid #199087;
+  border-radius: 5px;' %>
+      </div>
+
   </div>
-  <div class="grid-item sell-section">
-    <!-- stuff -->
-    <p>Sell £<span id = "sell"></span></p>
-    <%= link_to "Sell", new_buy_path %>
-  </div>
-
-  </div>
-    <!-- <p>Buy £<span id = "buy"></span> / Sell £<span id = "sell"></span></p> -->
- <!--    <%= link_to "Buy", new_buy_path %>
-    <%= link_to "Sell", new_buy_path %> -->
 
 
 
@@ -50,91 +69,133 @@
 
 
   </div>
-  <div class="carousel-cell">
-  <!--   <h2><i class="fab fa-ethereum fa-2x"></i></h2> -->
-  <%= image_tag "eth.svg", alt: "Ethereum Icon", width: 70 %>
+
+
+
+<div class="carousel-cell">
+    <%= image_tag "eth.svg", alt: "Ethereum Icon", width: 70 %>
     <h4>Ethereum</h4>
-    <p>Buy £<span id = "ethbuy"></span> / Sell £<span id = "ethsell"></span></p>
-    <%= link_to "Buy", new_buy_path %>
-    <button type="button" class="btn btn-primary">Buy</button>
-    <button type="button" class="btn btn-primary">Sell</button>
+
+    <div class="grid">
+      <div class="grid-item buy-section">
+        <p>Buy Price:</p><p>£<span id = "ethbuy"></span></p>
+        <form>
+          ETH:<br>
+          <input type="text" name="amount" value=1 text-align="right" style="width: 100px; color: black" id="ethbuyquantity"><br>
+        </form>
+
+        <form>
+          £:<br>
+          <input type="text" name="amount" style="width: 100px; color: black" id="ethbuyprice"><br>
+        </form>
+        <br>
+
+
+        <%= link_to "Buy Ethereum", new_buy_path, :style=>'color: white; background-color: #199087; padding: 3px 8px 3px 8px;
+  border-top: 1px solid #199087;
+  border-right: 1px solid #199087;
+  border-bottom: 1px solid #199087;
+  border-left: 1px solid #199087;
+  border-radius: 5px;' %>
+
+      </div>
+
+      <div class="grid-item sell-section">
+        <p>Sell Price:</p><p>£<span id = "ethsell"></span></p>
+        <form>
+          ETH:<br>
+          <input type="text" name="amount" value=1 style="width: 100px; color: black" id="ethsellquantity"><br>
+        </form>
+
+        <form>
+          £:<br>
+          <input type="text" name="amount" style="width: 100px; color: black" id="ethsellprice"><br>
+        </form>
+        <br>
+        <%= link_to "Sell Ethereum", new_buy_path, :style=>'color: white; background-color: #199087; padding: 2px 6px 2px 6px;
+  border-top: 1px solid #199087;
+  border-right: 1px solid #199087;
+  border-bottom: 1px solid #199087;
+  border-left: 1px solid #199087;
+  border-radius: 5px;' %>
+      </div>
+
   </div>
+
+
+
+
+
+
+  </div>
+
+
+
+
+
   <div class="carousel-cell">Bitcoin Cash</div>
   <div class="carousel-cell">Ripple</div>
+
   <div class="carousel-cell">
     <%= image_tag "eos.svg", alt: "EOS Icon", width: 70 %>
     <h4>EOS</h4>
-    <p>Buy £<span id = "eosbuy"></span> / Sell £<span id = "eossell"></span></p>
-    <button type="button" class="btn btn-primary">Buy</button>
-    <button type="button" class="btn btn-primary">Sell</button>
+
+    <div class="grid">
+      <div class="grid-item buy-section">
+        <p>Buy Price:</p><p>£<span id = "eosbuy"></span></p>
+        <form>
+          EOS:<br>
+          <input type="text" name="amount" value=1 text-align="right" style="width: 100px; color: black" id="eosbuyquantity"><br>
+        </form>
+
+        <form>
+          £:<br>
+          <input type="text" name="amount" style="width: 100px; color: black" id="eosbuyprice"><br>
+        </form>
+        <br>
+
+
+        <%= link_to "Buy EOS", new_buy_path, :style=>'color: white; background-color: #199087; padding: 3px 8px 3px 8px;
+  border-top: 1px solid #199087;
+  border-right: 1px solid #199087;
+  border-bottom: 1px solid #199087;
+  border-left: 1px solid #199087;
+  border-radius: 5px;' %>
+
+      </div>
+
+      <div class="grid-item sell-section">
+        <p>Sell Price:</p><p>£<span id = "eossell"></span></p>
+        <form>
+          EOS:<br>
+          <input type="text" name="amount" value=1 style="width: 100px; color: black" id="eossellquantity"><br>
+        </form>
+
+        <form>
+          £:<br>
+          <input type="text" name="amount" style="width: 100px; color: black" id="eossellprice"><br>
+        </form>
+        <br>
+        <%= link_to "Sell EOS", new_buy_path, :style=>'color: white; background-color: #199087; padding: 2px 6px 2px 6px;
+  border-top: 1px solid #199087;
+  border-right: 1px solid #199087;
+  border-bottom: 1px solid #199087;
+  border-left: 1px solid #199087;
+  border-radius: 5px;' %>
+      </div>
+
   </div>
+
+
+
+
+
+
+  </div>
+
 
 </div>
 
-<br>
-<br>
-<br><br>
-<br>
-<br><br>
-<br>
-<br><br>
-<br>
-<br><br>
-<br>
-<br><br>
-<br>
-<br><br>
-<br>
-<br><br>
-<br>
-<br><br>
-<br>
-<br><br>
-<br>
-<br><br>
-<br>
-<br><br>
-<br>
-<br><br>
-<br>
-<br><br>
-<br>
-<br><br>
-<br>
-<br><br>
-<br>
-<br><br>
-<br>
-<br><br>
-<br>
-<br><br>
-<br>
-<br><br>
-<br>
-<br><br>
-<br>
-<br><br>
-<br>
-<br><br>
-<br>
-<br><br>
-<br>
-<br><br>
-<br>
-<br><br>
-<br>
-<br><br>
-<br>
-<br><br>
-<br>
-<br><br>
-<br>
-<br><br>
-<br>
-<br><br>
-<br>
-<br><br>
-<br>
 <br>
 
 
@@ -168,22 +229,91 @@ var flkty = new Flickity( elem, {
 <h2>bitcoin price: </h2><h2 id = "buy1"><%= Buy.buy_price %></h2>
 
 <script>
+  // BITCOIN RESPONSIVE FORM
+
   const btcquantity = document.getElementById('btcquantity')
   const btcbuyprice = document.getElementById('btcbuyprice');
 
   btcquantity.addEventListener('keyup', logKey);
 
   function logKey(e) {
-  // btcbuyprice.textContent = ` ${btcquantity.value * window.pbuy}`;
-  btcbuyprice.value = ` ${btcquantity.value * window.pbuy}`;
+  btcbuyprice.value = ` ${(btcquantity.value * window.pbuy).toFixed(2)}`;
 }
 
   btcbuyprice.addEventListener('keyup', changeQuantity);
 
   function changeQuantity(e) {
-  // btcbuyprice.textContent = ` ${btcquantity.value * window.pbuy}`;
   btcquantity.value = ` ${btcbuyprice.value / window.pbuy}`;
 }
+
+ btcsellquantity.addEventListener('keyup', updateSellPrice);
+
+  function updateSellPrice(e) {
+  btcsellprice.value = ` ${(btcsellquantity.value * window.psell).toFixed(2)}`;
+}
+
+  btcsellprice.addEventListener('keyup', updateBtcSellQuantity);
+
+  function updateBtcSellQuantity(e) {
+  btcsellquantity.value = ` ${btcsellprice.value / window.psell}`;
+}
+
+// ETHEREUM RESPONSIVE FORM
+
+ethbuyquantity.addEventListener('keyup', updateEthBuyPrice);
+
+  function updateEthBuyPrice(e) {
+  ethbuyprice.value = ` ${(ethbuyquantity.value * window.ethpbuy).toFixed(2)}`;
+}
+
+ ethbuyprice.addEventListener('keyup', updateEthBuyQuantity);
+
+  function updateEthBuyQuantity(e) {
+  ethbuyquantity.value = ` ${ethbuyprice.value / window.ethpbuy}`;
+}
+
+ethsellquantity.addEventListener('keyup', updateEthSellPrice);
+
+  function updateEthSellPrice(e) {
+  ethsellprice.value = ` ${(ethsellquantity.value * window.ethpsell).toFixed(2)}`;
+}
+
+ethsellprice.addEventListener('keyup', updateEthSellQuantity);
+
+  function updateEthSellQuantity(e) {
+  ethsellquantity.value = ` ${ethsellprice.value / window.ethpsell}`;
+}
+
+// EOS RESPONSIVE FORM
+
+eosbuyquantity.addEventListener('keyup', updateEosBuyPrice);
+
+  function updateEosBuyPrice(e) {
+  eosbuyprice.value = ` ${(eosbuyquantity.value * window.eospbuy).toFixed(2)}`;
+}
+
+ eosbuyprice.addEventListener('keyup', updateEosBuyQuantity);
+
+  function updateEosBuyQuantity(e) {
+  eosbuyquantity.value = ` ${eosbuyprice.value / window.eospbuy}`;
+}
+
+eossellquantity.addEventListener('keyup', updateEosSellPrice);
+
+  function updateEosSellPrice(e) {
+  eossellprice.value = ` ${(eossellquantity.value * window.eospsell).toFixed(2)}`;
+}
+
+eossellprice.addEventListener('keyup', updateEosSellQuantity);
+
+  function updateEosSellQuantity(e) {
+  eossellquantity.value = ` ${eossellprice.value / window.eospsell}`;
+}
+
+
+
+
+
 
 
   </script>
@@ -211,12 +341,18 @@ function btcprice(){
     // console.log(data.result.XXBTZEUR.c[0]);
     const price = data.result.XXBTZEUR.c[0];
     window.pbuy = (parseFloat(price)*1.025).toFixed(2);
-    const psell = (parseFloat(price)*0.98).toFixed(2);
+    window.psell = (parseFloat(price)*0.98).toFixed(2);
     console.log(psell);
     // console.log(typeof p)
     buy.innerHTML = window.pbuy;
-    sell.innerHTML = psell;
-    btcbuyprice.value = ` ${btcquantity.value * window.pbuy}`;
+    sell.innerHTML = window.psell;
+
+    document.getElementById("btcbuyprice").value = ` ${(btcquantity.value * window.pbuy).toFixed(2)}`;
+
+    document.getElementById("btcsellprice").value = ` ${(btcsellquantity.value * window.psell).toFixed(2)}`;
+
+    // document.getElementById("btcbuyprice").placeholder = window.pbuy;
+    // btcbuyprice.placeholder = window.pbuy;
   });
 
 
@@ -248,13 +384,17 @@ const ethsell =  document.getElementById("ethsell");
   .then((data) => {
     // console.log(data.result.XXBTZEUR.c[0]);
     const ethprice = data.result.XETHZEUR.c[0];
-    const ethpbuy = (parseFloat(ethprice)*1.02).toFixed(2);
-    const ethpsell = (parseFloat(ethprice)*0.98).toFixed(2);
+    window.ethpbuy = (parseFloat(ethprice)*1.02).toFixed(2);
+    window.ethpsell = (parseFloat(ethprice)*0.98).toFixed(2);
     console.log(ethprice);
     console.log(ethpsell);
     // console.log(typeof p)
     ethbuy.innerHTML = ethpbuy;
     ethsell.innerHTML = ethpsell;
+
+    document.getElementById("ethbuyprice").value = ` ${(ethbuyquantity.value * window.ethpbuy).toFixed(2)}`;
+
+    document.getElementById("ethsellprice").value = ` ${(ethsellquantity.value * window.ethpsell).toFixed(2)}`;
   });
   }
 
@@ -282,13 +422,17 @@ const eossell =  document.getElementById("eossell");
   .then((data) => {
     // console.log(data.result.XXBTZEUR.c[0]);
     const eosprice = data.result.EOSEUR.c[0];
-    const eospbuy = (parseFloat(eosprice)*1.02).toFixed(2);
-    const eospsell = (parseFloat(eosprice)*0.98).toFixed(2);
+    window.eospbuy = (parseFloat(eosprice)*1.02).toFixed(2);
+    window.eospsell = (parseFloat(eosprice)*0.98).toFixed(2);
     console.log(eosprice);
     console.log(eospsell);
     // console.log(typeof p)
     eosbuy.innerHTML = eospbuy;
     eossell.innerHTML = eospsell;
+
+    document.getElementById("eosbuyprice").value = ` ${(eosbuyquantity.value * window.eospbuy).toFixed(2)}`;
+
+    document.getElementById("eossellprice").value = ` ${(eossellquantity.value * window.eospsell).toFixed(2)}`;
   });
   }
 
