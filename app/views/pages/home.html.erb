@@ -32,7 +32,7 @@
         <br>
 
 
-        <%= link_to "Buy Bitcoin", new_buy_path, :style=>'color: white; background-color: #199087; padding: 3px 8px 3px 8px;
+        <%= link_to "Buy BTC", new_buy_path, :style=>'color: white; background-color: #199087; padding: 3px 8px 3px 8px;
   border-top: 1px solid #199087;
   border-right: 1px solid #199087;
   border-bottom: 1px solid #199087;
@@ -53,7 +53,7 @@
           <input type="text" name="amount" style="width: 100px; color: black" id="btcsellprice"><br>
         </form>
         <br>
-        <%= link_to "Sell Bitcoin", new_buy_path, :style=>'color: white; background-color: #199087; padding: 2px 6px 2px 6px;
+        <%= link_to "Sell BTC", new_buy_path, :style=>'color: white; background-color: #199087; padding: 2px 6px 2px 6px;
   border-top: 1px solid #199087;
   border-right: 1px solid #199087;
   border-bottom: 1px solid #199087;
@@ -91,7 +91,7 @@
         <br>
 
 
-        <%= link_to "Buy Ethereum", new_buy_path, :style=>'color: white; background-color: #199087; padding: 3px 8px 3px 8px;
+        <%= link_to "Buy ETH", new_buy_path, :style=>'color: white; background-color: #199087; padding: 3px 8px 3px 8px;
   border-top: 1px solid #199087;
   border-right: 1px solid #199087;
   border-bottom: 1px solid #199087;
@@ -112,7 +112,7 @@
           <input type="text" name="amount" style="width: 100px; color: black" id="ethsellprice"><br>
         </form>
         <br>
-        <%= link_to "Sell Ethereum", new_buy_path, :style=>'color: white; background-color: #199087; padding: 2px 6px 2px 6px;
+        <%= link_to "Sell ETH", new_buy_path, :style=>'color: white; background-color: #199087; padding: 2px 6px 2px 6px;
   border-top: 1px solid #199087;
   border-right: 1px solid #199087;
   border-bottom: 1px solid #199087;
@@ -122,19 +122,112 @@
 
   </div>
 
+  </div>
+
+  <div class="carousel-cell">
+    <%= image_tag "bch.svg", alt: "Bitcoin Cash Icon", width: 70 %>
+    <h4>Bitcoin Cash</h4>
+
+    <div class="grid">
+      <div class="grid-item buy-section">
+        <p>Buy Price:</p><p>£<span id = "bchbuy"></span></p>
+        <form>
+          BCH:<br>
+          <input type="text" name="amount" value=1 text-align="right" style="width: 100px; color: black" id="bchbuyquantity"><br>
+        </form>
+
+        <form>
+          £:<br>
+          <input type="text" name="amount" style="width: 100px; color: black" id="bchbuyprice"><br>
+        </form>
+        <br>
 
 
+        <%= link_to "Buy BCH", new_buy_path, :style=>'color: white; background-color: #199087; padding: 3px 8px 3px 8px;
+  border-top: 1px solid #199087;
+  border-right: 1px solid #199087;
+  border-bottom: 1px solid #199087;
+  border-left: 1px solid #199087;
+  border-radius: 5px;' %>
 
+      </div>
 
+      <div class="grid-item sell-section">
+        <p>Sell Price:</p><p>£<span id = "bchsell"></span></p>
+        <form>
+          BCH:<br>
+          <input type="text" name="amount" value=1 style="width: 100px; color: black" id="bchsellquantity"><br>
+        </form>
+
+        <form>
+          £:<br>
+          <input type="text" name="amount" style="width: 100px; color: black" id="bchsellprice"><br>
+        </form>
+        <br>
+        <%= link_to "Sell BCH", new_buy_path, :style=>'color: white; background-color: #199087; padding: 2px 6px 2px 6px;
+  border-top: 1px solid #199087;
+  border-right: 1px solid #199087;
+  border-bottom: 1px solid #199087;
+  border-left: 1px solid #199087;
+  border-radius: 5px;' %>
+      </div>
 
   </div>
 
+  </div>
+
+  <div class="carousel-cell">
+    <%= image_tag "xrp.svg", alt: "Bitcoin Cash Icon", width: 70 %>
+    <h4>Ripple</h4>
+
+    <div class="grid">
+      <div class="grid-item buy-section">
+        <p>Buy Price:</p><p>£<span id = "xrpbuy"></span></p>
+        <form>
+          XRP:<br>
+          <input type="text" name="amount" value=1 text-align="right" style="width: 100px; color: black" id="xrpbuyquantity"><br>
+        </form>
+
+        <form>
+          £:<br>
+          <input type="text" name="amount" style="width: 100px; color: black" id="xrpbuyprice"><br>
+        </form>
+        <br>
 
 
+        <%= link_to "Buy XRP", new_buy_path, :style=>'color: white; background-color: #199087; padding: 3px 8px 3px 8px;
+  border-top: 1px solid #199087;
+  border-right: 1px solid #199087;
+  border-bottom: 1px solid #199087;
+  border-left: 1px solid #199087;
+  border-radius: 5px;' %>
 
+      </div>
 
-  <div class="carousel-cell">Bitcoin Cash</div>
-  <div class="carousel-cell">Ripple</div>
+      <div class="grid-item sell-section">
+        <p>Sell Price:</p><p>£<span id = "xrpsell"></span></p>
+        <form>
+          XRP:<br>
+          <input type="text" name="amount" value=1 style="width: 100px; color: black" id="xrpsellquantity"><br>
+        </form>
+
+        <form>
+          £:<br>
+          <input type="text" name="amount" style="width: 100px; color: black" id="xrpsellprice"><br>
+        </form>
+        <br>
+        <%= link_to "Sell XRP", new_buy_path, :style=>'color: white; background-color: #199087; padding: 2px 6px 2px 6px;
+  border-top: 1px solid #199087;
+  border-right: 1px solid #199087;
+  border-bottom: 1px solid #199087;
+  border-left: 1px solid #199087;
+  border-radius: 5px;' %>
+      </div>
+
+  </div>
+
+  </div>
+
 
   <div class="carousel-cell">
     <%= image_tag "eos.svg", alt: "EOS Icon", width: 70 %>
@@ -311,6 +404,59 @@ eossellprice.addEventListener('keyup', updateEosSellQuantity);
 }
 
 
+// Bitcoin Cash RESPONSIVE FORM
+
+
+bchbuyquantity.addEventListener('keyup', updateBchBuyPrice);
+
+  function updateBchBuyPrice(e) {
+  bchbuyprice.value = ` ${(bchbuyquantity.value * window.bchpbuy).toFixed(2)}`;
+}
+
+ bchbuyprice.addEventListener('keyup', updateBchBuyQuantity);
+
+  function updateBchBuyQuantity(e) {
+  bchbuyquantity.value = ` ${bchbuyprice.value / window.bchpbuy}`;
+}
+
+bchsellquantity.addEventListener('keyup', updateBchSellPrice);
+
+  function updateBchSellPrice(e) {
+  bchsellprice.value = ` ${(bchsellquantity.value * window.bchpsell).toFixed(2)}`;
+}
+
+bchsellprice.addEventListener('keyup', updateBchSellQuantity);
+
+  function updateBchSellQuantity(e) {
+  bchsellquantity.value = ` ${bchsellprice.value / window.bchpsell}`;
+}
+
+// Ripple RESPONSIVE FORM
+
+xrpbuyquantity.addEventListener('keyup', updateXrpBuyPrice);
+
+  function updateXrpBuyPrice(e) {
+  xrpbuyprice.value = ` ${(xrpbuyquantity.value * window.xrppbuy).toFixed(2)}`;
+}
+
+ xrpbuyprice.addEventListener('keyup', updateXrpBuyQuantity);
+
+  function updateXrpBuyQuantity(e) {
+  xrpbuyquantity.value = ` ${xrpbuyprice.value / window.xrppbuy}`;
+}
+
+xrpsellquantity.addEventListener('keyup', updateXrpSellPrice);
+
+  function updateXrpSellPrice(e) {
+  xrpsellprice.value = ` ${(xrpsellquantity.value * window.xrppsell).toFixed(2)}`;
+}
+
+xrpsellprice.addEventListener('keyup', updateXrpSellQuantity);
+
+  function updateXrpSellQuantity(e) {
+  xrpsellquantity.value = ` ${xrpsellprice.value / window.xrppsell}`;
+}
+
 
 
 
@@ -356,11 +502,6 @@ function btcprice(){
   });
 
 
-
-  n++;
-  return n;
-  console.log("Hello world!");
-  console.log(n);
 }
 
   </script>
@@ -437,4 +578,76 @@ const eossell =  document.getElementById("eossell");
   }
 
   </script>
+
+
+   <script>
+      document.addEventListener("DOMContentLoaded", function() {
+  bchprice();
+});
+       window.onload = function() {
+  setInterval(bchprice, 1000);
+};
+
+
+const bchbuy =  document.getElementById("bchbuy");
+const bchsell =  document.getElementById("bchsell");
+
+
+  function bchprice(){
+  fetch("https://api.kraken.com/0/public/Ticker?pair=BCHEUR")
+  .then(response => response.json())
+  .then((data) => {
+    // console.log(data.result.XXBTZEUR.c[0]);
+    const bchprice = data.result.BCHEUR.c[0];
+    window.bchpbuy = (parseFloat(bchprice)*1.02).toFixed(2);
+    window.bchpsell = (parseFloat(bchprice)*0.98).toFixed(2);
+    console.log(bchprice);
+
+
+    bchbuy.innerHTML = bchpbuy;
+    bchsell.innerHTML = bchpsell;
+
+    document.getElementById("bchbuyprice").value = ` ${(bchbuyquantity.value * window.bchpbuy).toFixed(2)}`;
+
+    document.getElementById("bchsellprice").value = ` ${(bchsellquantity.value * window.bchpsell).toFixed(2)}`;
+  });
+  }
+
+  </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+  xrpprice();
+});
+       window.onload = function() {
+  setInterval(xrpprice, 10000);
+};
+
+
+const xrpbuy =  document.getElementById("xrpbuy");
+const xrpsell =  document.getElementById("xrpsell");
+
+
+  function xrpprice(){
+  fetch("https://api.kraken.com/0/public/Ticker?pair=XXRPZEUR")
+  .then(response => response.json())
+  .then((data) => {
+    // console.log(data.result.XXBTZEUR.c[0]);
+    const xrpprice = data.result.XXRPZEUR.c[0];
+    window.xrppbuy = (parseFloat(xrpprice)*1.02).toFixed(2);
+    window.xrppsell = (parseFloat(xrpprice)*0.98).toFixed(2);
+    console.log(xrpprice);
+
+
+    xrpbuy.innerHTML = xrppbuy;
+    xrpsell.innerHTML = xrppsell;
+
+    document.getElementById("xrpbuyprice").value = ` ${(xrpbuyquantity.value * window.xrppbuy).toFixed(2)}`;
+
+    document.getElementById("xrpsellprice").value = ` ${(xrpsellquantity.value * window.xrppsell).toFixed(2)}`;
+  });
+  }
+
+  </script>
+
 
