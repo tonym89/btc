@@ -37,7 +37,7 @@ class BuysController < ApplicationController
   private
 
   def buy_params
-    params.require(:buy).permit(:quantity)
+    params.require(:buy).permit(:quantity, :token)
   end
 
 

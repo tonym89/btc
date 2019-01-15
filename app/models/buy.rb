@@ -1,5 +1,6 @@
 class Buy < ApplicationRecord
   belongs_to :user
+  # validates :token, presence: true
 
 require 'httparty'
 

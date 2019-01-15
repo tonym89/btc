@@ -32,12 +32,23 @@
         <br>
 
 
-        <%= link_to "Buy BTC", new_buy_path, :style=>'color: white; background-color: #199087; padding: 3px 8px 3px 8px;
+        <%= link_to "Buy BTC", new_buy_path, id: "buybitcoin", :style=>'color: white; background-color: #199087; padding: 3px 8px 3px 8px;
   border-top: 1px solid #199087;
   border-right: 1px solid #199087;
   border-bottom: 1px solid #199087;
   border-left: 1px solid #199087;
   border-radius: 5px;' %>
+
+  <script>
+    buybitcoin.addEventListener('click', storebtcbuy);
+
+  function storebtcbuy(e) {
+    var quantity = btcquantity.value;
+   localStorage.setItem("btcQuantity",quantity);
+   localStorage.setItem("currency", 1);
+}
+
+  </script>
 
       </div>
 
