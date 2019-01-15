@@ -527,6 +527,10 @@ xrpsellprice.addEventListener('keyup', updateXrpSellQuantity);
 
     window.onload = function() {
   setInterval(btcprice, 1000);
+  setInterval(ethprice, 1000);
+  setInterval(eosprice, 1000);
+  setInterval(xrpprice, 1000);
+  setInterval(bchprice, 1000);
 };
 
 var n = 0;
@@ -542,8 +546,8 @@ function btcprice(){
     const price = data.result.XXBTZEUR.c[0];
     window.pbuy = (parseFloat(price)*1.025).toFixed(2);
     window.psell = (parseFloat(price)*0.98).toFixed(2);
-    console.log(psell);
-    // console.log(typeof p)
+    // console.log(psell);
+    // console.log(pbuy)
     buy.innerHTML = window.pbuy;
     sell.innerHTML = window.psell;
 
@@ -564,9 +568,9 @@ function btcprice(){
       document.addEventListener("DOMContentLoaded", function() {
   ethprice();
 });
-       window.onload = function() {
-  setInterval(ethprice, 1000);
-};
+//        window.onload = function() {
+//   setInterval(ethprice, 1000);
+// };
 
 
 const ethbuy =  document.getElementById("ethbuy");
@@ -581,8 +585,8 @@ const ethsell =  document.getElementById("ethsell");
     const ethprice = data.result.XETHZEUR.c[0];
     window.ethpbuy = (parseFloat(ethprice)*1.02).toFixed(2);
     window.ethpsell = (parseFloat(ethprice)*0.98).toFixed(2);
-    console.log(ethprice);
-    console.log(ethpsell);
+    // console.log(ethprice);
+    // console.log(ethpsell);
     // console.log(typeof p)
     ethbuy.innerHTML = ethpbuy;
     ethsell.innerHTML = ethpsell;
@@ -600,11 +604,11 @@ const ethsell =  document.getElementById("ethsell");
       document.addEventListener("DOMContentLoaded", function() {
   eosprice();
 });
-       window.onload = function() {
-  setInterval(eosprice, 10000);
-  setInterval(ethprice, 10000);
-  setInterval(btcprice, 10000);
-};
+//        window.onload = function() {
+//   setInterval(eosprice, 10000);
+//   setInterval(ethprice, 10000);
+//   setInterval(btcprice, 10000);
+// };
 
 
 const eosbuy =  document.getElementById("eosbuy");
@@ -619,8 +623,8 @@ const eossell =  document.getElementById("eossell");
     const eosprice = data.result.EOSEUR.c[0];
     window.eospbuy = (parseFloat(eosprice)*1.02).toFixed(2);
     window.eospsell = (parseFloat(eosprice)*0.98).toFixed(2);
-    console.log(eosprice);
-    console.log(eospsell);
+    // console.log(eosprice);
+    // console.log(eospsell);
     // console.log(typeof p)
     eosbuy.innerHTML = eospbuy;
     eossell.innerHTML = eospsell;
@@ -638,9 +642,9 @@ const eossell =  document.getElementById("eossell");
       document.addEventListener("DOMContentLoaded", function() {
   bchprice();
 });
-       window.onload = function() {
-  setInterval(bchprice, 1000);
-};
+//        window.onload = function() {
+//   setInterval(bchprice, 1000);
+// };
 
 
 const bchbuy =  document.getElementById("bchbuy");
@@ -655,7 +659,7 @@ const bchsell =  document.getElementById("bchsell");
     const bchprice = data.result.BCHEUR.c[0];
     window.bchpbuy = (parseFloat(bchprice)*1.02).toFixed(2);
     window.bchpsell = (parseFloat(bchprice)*0.98).toFixed(2);
-    console.log(bchprice);
+    // console.log(bchprice);
 
 
     bchbuy.innerHTML = bchpbuy;
@@ -673,9 +677,9 @@ const bchsell =  document.getElementById("bchsell");
       document.addEventListener("DOMContentLoaded", function() {
   xrpprice();
 });
-       window.onload = function() {
-  setInterval(xrpprice, 10000);
-};
+//        window.onload = function() {
+//   setInterval(xrpprice, 10000);
+// };
 
 
 const xrpbuy =  document.getElementById("xrpbuy");
@@ -690,7 +694,7 @@ const xrpsell =  document.getElementById("xrpsell");
     const xrpprice = data.result.XXRPZEUR.c[0];
     window.xrppbuy = (parseFloat(xrpprice)*1.02).toFixed(2);
     window.xrppsell = (parseFloat(xrpprice)*0.98).toFixed(2);
-    console.log(xrpprice);
+    // console.log(xrpprice);
 
 
     xrpbuy.innerHTML = xrppbuy;
