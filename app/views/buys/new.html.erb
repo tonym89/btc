@@ -1,7 +1,25 @@
+<script>
+
+  document.addEventListener('DOMContentLoaded', function() {
+    defaultQuantity.value = `${localStorage.getItem("btcQuantity")}`;
+    defaultToken.value = `${localStorage.getItem("currency")}`;
+},);
+
+
+</script>
+
+
 <%= form_for(@buy) do |f| %>
   <div class="form-group">
+
     <%= f.label :quantity %>
-    <%= f.text_field :quantity, class: 'form-control' %>
+    <%= f.text_field :quantity, id: "defaultQuantity", class: 'form-control' %>
+
+
+    <%= f.label :token %>
+    <%= f.select(:token, [['Bitcoin', 1], ['Ethereum', 2], ['Bitcoin Cash', 3], ['Ripple', 4], ['EOS', 5] ], {}, id: "defaultToken") %>
+
+    <!-- <%= f.text_field :token, class: 'form-control' %> -->
   </div>
 
   <%= f.submit class: 'btn btn-primary' %>
