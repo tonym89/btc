@@ -39,7 +39,7 @@
   border-left: 1px solid #199087;
   border-radius: 5px;' %>
 
-  <script>
+<!--   <script>
     buybitcoin.addEventListener('click', storebtcbuy);
 
   function storebtcbuy(e) {
@@ -48,7 +48,9 @@
    localStorage.setItem("currency", 1);
 }
 
-  </script>
+  </script> -->
+
+
 
       </div>
 
@@ -102,7 +104,7 @@
         <br>
 
 
-        <%= link_to "Buy ETH", new_buy_path, :style=>'color: white; background-color: #199087; padding: 3px 8px 3px 8px;
+        <%= link_to "Buy ETH", new_buy_path, id: "buyethereum", :style=>'color: white; background-color: #199087; padding: 3px 8px 3px 8px;
   border-top: 1px solid #199087;
   border-right: 1px solid #199087;
   border-bottom: 1px solid #199087;
@@ -111,6 +113,35 @@
 
       </div>
 
+     <!--  <script>
+     buyethereum.addEventListener('click', storeethbuy);
+
+  function storeethbuy(e) {
+    var quantity = ethbuyquantity.value;
+   localStorage.setItem("btcQuantity",quantity);
+   localStorage.setItem("currency", 2);
+}
+
+
+// buyxrp.addEventListener('click', storexrpbuy);
+
+//   function storexrpbuy(e) {
+//     var quantity = xrpbuyquantity.value;
+//    localStorage.setItem("btcQuantity",quantity);
+//    localStorage.setItem("currency", 4);
+// }
+
+// buybch.addEventListener('click', storebchbuy);
+
+//   function storebchbuy(e) {
+//     var quantity = bchbuyquantity.value;
+//    localStorage.setItem("btcQuantity",quantity);
+//    localStorage.setItem("currency", 4);
+// }
+
+
+  </script>
+ -->
       <div class="grid-item sell-section">
         <p>Sell Price:</p><p>£<span id = "ethsell"></span></p>
         <form>
@@ -154,7 +185,7 @@
         <br>
 
 
-        <%= link_to "Buy BCH", new_buy_path, :style=>'color: white; background-color: #199087; padding: 3px 8px 3px 8px;
+        <%= link_to "Buy BCH", new_buy_path, id: "buybch", :style=>'color: white; background-color: #199087; padding: 3px 8px 3px 8px;
   border-top: 1px solid #199087;
   border-right: 1px solid #199087;
   border-bottom: 1px solid #199087;
@@ -206,7 +237,7 @@
         <br>
 
 
-        <%= link_to "Buy XRP", new_buy_path, :style=>'color: white; background-color: #199087; padding: 3px 8px 3px 8px;
+        <%= link_to "Buy XRP", new_buy_path, id: "buyxrp", :style=>'color: white; background-color: #199087; padding: 3px 8px 3px 8px;
   border-top: 1px solid #199087;
   border-right: 1px solid #199087;
   border-bottom: 1px solid #199087;
@@ -259,7 +290,7 @@
         <br>
 
 
-        <%= link_to "Buy EOS", new_buy_path, :style=>'color: white; background-color: #199087; padding: 3px 8px 3px 8px;
+        <%= link_to "Buy EOS", new_buy_path, id: "buyeos", :style=>'color: white; background-color: #199087; padding: 3px 8px 3px 8px;
   border-top: 1px solid #199087;
   border-right: 1px solid #199087;
   border-bottom: 1px solid #199087;
@@ -267,6 +298,18 @@
   border-radius: 5px;' %>
 
       </div>
+
+ <!--      <script>
+
+
+buyeos.addEventListener('click', storeeosbuy);
+
+  function storeeosbuy(e) {
+    var quantity = eosbuyquantity.value;
+   localStorage.setItem("btcQuantity",quantity);
+   localStorage.setItem("currency", 5);
+}
+      </script> -->
 
       <div class="grid-item sell-section">
         <p>Sell Price:</p><p>£<span id = "eossell"></span></p>
@@ -330,7 +373,7 @@ var flkty = new Flickity( elem, {
 </script>
 
 
-<h2>bitcoin price: </h2><h2 id = "buy1"><%= Buy.buy_price %></h2>
+<h2>bitcoin price: </h2><h2 id = "buy1"><%= Buy.btc_buy_price %></h2>
 
 <script>
   // BITCOIN RESPONSIVE FORM
@@ -661,4 +704,56 @@ const xrpsell =  document.getElementById("xrpsell");
 
   </script>
 
+    <script>
+    buybitcoin.addEventListener('click', storebtcbuy);
 
+  function storebtcbuy(e) {
+    var quantity = btcquantity.value;
+   localStorage.setItem("btcQuantity",quantity);
+   localStorage.setItem("currency", 1);
+}
+
+  </script>
+
+       <script>
+
+
+buyeos.addEventListener('click', storeeosbuy);
+
+  function storeeosbuy(e) {
+    var quantity = eosbuyquantity.value;
+   localStorage.setItem("btcQuantity",quantity);
+   localStorage.setItem("currency", 5);
+}
+      </script>
+
+
+ <script>
+     buyethereum.addEventListener('click', storeethbuy);
+
+  function storeethbuy(e) {
+    var quantity = ethbuyquantity.value;
+   localStorage.setItem("btcQuantity",quantity);
+   localStorage.setItem("currency", 2);
+}
+  </script>
+
+  <script>
+    buyxrp.addEventListener('click', storexrpbuy);
+
+  function storexrpbuy(e) {
+    var quantity = xrpbuyquantity.value;
+   localStorage.setItem("btcQuantity",quantity);
+   localStorage.setItem("currency", 4);
+}
+</script>
+
+<script>
+  buybch.addEventListener('click', storebchbuy);
+
+  function storebchbuy(e) {
+    var quantity = bchbuyquantity.value;
+   localStorage.setItem("btcQuantity",quantity);
+   localStorage.setItem("currency", 3);
+}
+</script>

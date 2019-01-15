@@ -17,7 +17,17 @@ class BuysController < ApplicationController
   def create
     @buy = Buy.new(buy_params)
     @buy.user = current_user
-    @buy.price = Buy.buy_price
+
+    # @buy.price = Buy.buy_price
+
+    if @buy.token == 1
+    @buy.price = Buy.btc_buy_price
+    elsif @buy.token == 2
+    @buy.price = Buy.eth_buy_price
+    else
+    @buy.price == 3
+    end
+
     @buy.status = 0
     authorize @buy
     @buy.save
