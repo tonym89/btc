@@ -24,8 +24,14 @@ class BuysController < ApplicationController
     @buy.price = Buy.btc_buy_price
     elsif @buy.token == 2
     @buy.price = Buy.eth_buy_price
+    elsif @buy.token == 3
+    @buy.price = Buy.bch_buy_price
+    elsif @buy.token == 4
+    @buy.price = Buy.xrp_buy_price
+    elsif @buy.token == 5
+    @buy.price = Buy.eos_buy_price
     else
-    @buy.price == 3
+    @buy.price = 999999999
     end
 
     @buy.status = 0
