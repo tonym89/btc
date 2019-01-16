@@ -12,17 +12,23 @@
 <%= form_for(@buy) do |f| %>
   <div class="form-group">
 
+    <%= f.label :token %>
+    <%= f.select(:token, [['Bitcoin', 1], ['Ethereum', 2], ['Bitcoin Cash', 3], ['Ripple', 4], ['EOS', 5] ], {}, id: "defaultToken") %>
+
     <%= f.label :quantity %>
     <%= f.text_field :quantity, id: "defaultQuantity", class: 'form-control' %>
 
+    <%= f.label :wallet, 'Wallet Address' %>
+    <%= f.text_field :wallet, class: 'form-control' %>
+    <p>Create a wallet</p>
 
-    <%= f.label :token %>
-    <%= f.select(:token, [['Bitcoin', 1], ['Ethereum', 2], ['Bitcoin Cash', 3], ['Ripple', 4], ['EOS', 5] ], {}, id: "defaultToken") %>
+
+
 
     <!-- <%= f.text_field :token, class: 'form-control' %> -->
   </div>
 
-  <%= f.submit class: 'btn btn-primary' %>
+  <%= f.submit 'Place Order', class: 'btn btn-primary' %>
 <% end %>
 
 <h2>bitcoin price: </h2><h2 id = "buy1"><%= Buy.btc_buy_price %></h2>
