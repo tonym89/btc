@@ -53,7 +53,7 @@ class BuysController < ApplicationController
   private
 
   def buy_params
-    params.require(:buy).permit(:quantity, :token)
+    params.require(:buy).permit(:quantity, :token, :wallet)
   end
 
 
