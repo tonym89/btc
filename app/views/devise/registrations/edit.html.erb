@@ -1,23 +1,121 @@
+<!--
+
 <%= cl_image_tag(@user.document,
       width: 400, height: 300, crop: :fill) %>
 <%= cl_image_tag(@user.selfie,
       width: 400, height: 300, crop: :fill) %>
 
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+ -->
+
+ <div class="container">
+  <div class="row" >
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+
+      <div class="form-edit">
+
+
+      <h2 >Account Details</h2>
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= f.error_notification %>
+
+    <%= f.input :email, required: true %>
+
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+    <% end %>
+
+    <%= f.input :password,
+                hint: "leave it blank if you don't want to change it",
+                required: false,
+                input_html: { autocomplete: "new-password" } %>
+    <%= f.input :password_confirmation,
+                required: false,
+                input_html: { autocomplete: "new-password" } %>
+    <%= f.input :current_password,
+                hint: "we need your current password to confirm your changes",
+                required: true,
+                input_html: { autocomplete: "current-password" } %>
+
+    <div class="form-actions">
+    <%= f.button :submit, "Update", :style=>'color: white; background-color: #199087; padding: 3px 8px 3px 8px;
+  border-top: 1px solid #199087;
+  border-right: 1px solid #199087;
+  border-bottom: 1px solid #199087;
+  border-left: 1px solid #199087;
+  border-radius: 5px;' %>
+  </div>
+  </div>
+
+
+<% end %>
+
+
+    </div>
+
+  </div>
+</div>
+
+ <div class="container">
+  <div class="row" >
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+
+      <div class="form-edit" id="details">
+
+
+      <h2>Account Verification</h2>
+      <p>In order to protect our customers from fraud, we require 2 verification photos to be submitted before trading:</p>
+      <ol>
+          <li>A CLEAR photo of your the ID page of your passport</li>
+          <li>A selfie with a handwritten note stating: "I (your name) am buying bitcoins on coinoutlet.com. I confirm that I am buying them for myself and there is no third party involvement. (Sign & Date)"</li>
+      </ol>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
+  <div class="form-inputs" >
+
+    <%= f.input :document %>
+    <%= f.input :document_cache, as: :hidden %>
+    <%= f.input :selfie %>
+    <%= f.input :selfie_cache, as: :hidden %>
+
+    <div class="form-actions">
+    <%= f.button :submit, "Submit", :style=>'color: white; background-color: #199087; padding: 3px 8px 3px 8px;
+  border-top: 1px solid #199087;
+  border-right: 1px solid #199087;
+  border-bottom: 1px solid #199087;
+  border-left: 1px solid #199087;
+  border-radius: 5px;' %>
+    </div>
+    <% end %>
+    </div>
+  </div>
+
+
+    </div>
+
+  </div>
+</div>
+
+<!-- <div class="container" >
+  <div class="row" >
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+
+      <div class="form-edit">
+
+         <h2 >Account Details</h2>
+
+         <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= f.error_notification %>
+
+
+
     <%= f.input :email, required: true, autofocus: true %>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     <% end %>
-    <%= f.input :document %>
-    <%= f.input :document_cache, as: :hidden %>
-    <%= f.input :selfie %>
-    <%= f.input :selfie_cache, as: :hidden %>
+
     <%= f.input :password,
                 hint: "leave it blank if you don't want to change it",
                 required: false,
@@ -36,8 +134,19 @@
   </div>
 <% end %>
 
-<h3>Cancel my account</h3>
+
+    </div>
+  </div>
+</div>
+
+
+
+    <h3>Cancel my account</h3>
 
 <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
 <%= link_to "Back", :back %>
+</div>
+
+
+ -->
