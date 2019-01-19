@@ -4,8 +4,8 @@
       width: 400, height: 300, crop: :fill) %>
 <%= cl_image_tag(@user.selfie,
       width: 400, height: 300, crop: :fill) %>
-
  -->
+
 
  <div class="container">
   <div class="row" >
@@ -31,10 +31,37 @@
     <%= f.input :password_confirmation,
                 required: false,
                 input_html: { autocomplete: "new-password" } %>
+
+    <br>
+    <h2 id="details">Identity Verification</h2>
+
+
+      <% if @user.kyc_status == false && @user.selfie? &&  @user.document? %>
+      <p>Your identity docments are currently being processed.  We aim to process all documents within 1 hour. </p>
+
+      <% elsif @user.kyc_status == true %>
+      <p>Your identity has been verified</p>
+      <% else %>
+       <p>In order to protect our customers from fraud, we require 2 verification photos to be submitted before trading:</p>
+      <ol>
+          <li>A CLEAR photo of your the ID page of your passport</li>
+          <li>A selfie with a handwritten note stating: "I (your name) am buying bitcoins on coinoutlet.com. I confirm that I am buying them for myself and there is no third party involvement. (Sign & Date)"</li>
+      </ol>
+       <%= f.input :document %>
+    <%= f.input :document_cache, as: :hidden %>
+    <%= f.input :selfie %>
+    <%= f.input :selfie_cache, as: :hidden %>
+
+      <% end %>
+
+
+
     <%= f.input :current_password,
-                hint: "we need your current password to confirm your changes",
+                hint: "Enter your current password to confirm changes",
                 required: true,
                 input_html: { autocomplete: "current-password" } %>
+
+
 
     <div class="form-actions">
     <%= f.button :submit, "Update", :style=>'color: white; background-color: #199087; padding: 3px 8px 3px 8px;
@@ -55,7 +82,7 @@
   </div>
 </div>
 
- <div class="container">
+<!--  <div class="container">
   <div class="row" >
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
 
@@ -96,57 +123,5 @@
 
   </div>
 </div>
-
-<!-- <div class="container" >
-  <div class="row" >
-    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-
-      <div class="form-edit">
-
-         <h2 >Account Details</h2>
-
-         <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= f.error_notification %>
-
-
-
-    <%= f.input :email, required: true, autofocus: true %>
-
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
-    <% end %>
-
-    <%= f.input :password,
-                hint: "leave it blank if you don't want to change it",
-                required: false,
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: false,
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :current_password,
-                hint: "we need your current password to confirm your changes",
-                required: true,
-                input_html: { autocomplete: "current-password" } %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Update" %>
-  </div>
-<% end %>
-
-
-    </div>
-  </div>
-</div>
-
-
-
-    <h3>Cancel my account</h3>
-
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
-</div>
-
 
  -->
