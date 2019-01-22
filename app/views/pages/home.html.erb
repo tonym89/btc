@@ -6,7 +6,7 @@
 <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 
 
-<h1 text-align="center">Pick Currency</h1>
+<!-- <h1 text-align="center">Pick Currency</h1> -->
 
 <!-- Flickity HTML init -->
 <div class="carousel"
@@ -32,12 +32,7 @@
         <br>
 
 
-        <%= link_to "Buy BTC", "#{new_buy_path}#details", id: "buybitcoin", :style=>'color: white; background-color: #199087; padding: 3px 8px 3px 8px;
-  border-top: 1px solid #199087;
-  border-right: 1px solid #199087;
-  border-bottom: 1px solid #199087;
-  border-left: 1px solid #199087;
-  border-radius: 5px;' %>
+        <%= link_to "Buy BTC", "#{new_buy_path}#details", id: "buybitcoin", :class=>"button-buy" %>
 
 <!--   <script>
     buybitcoin.addEventListener('click', storebtcbuy);
@@ -66,12 +61,7 @@
           <input type="text" name="amount" style="width: 100px; color: black" id="btcsellprice"><br>
         </form>
         <br>
-        <%= link_to "Sell BTC", new_buy_path, :style=>'color: white; background-color: #199087; padding: 2px 6px 2px 6px;
-  border-top: 1px solid #199087;
-  border-right: 1px solid #199087;
-  border-bottom: 1px solid #199087;
-  border-left: 1px solid #199087;
-  border-radius: 5px;' %>
+        <%= link_to "Sell BTC", new_buy_path, :class=>"button-sell" %>
       </div>
 
   </div>
@@ -85,7 +75,7 @@
 
 
 
-<div class="carousel-cell">
+<div class="carousel-cell eth">
     <%= image_tag "eth.svg", alt: "Ethereum Icon", width: 70 %>
     <h4>Ethereum</h4>
 
@@ -104,12 +94,7 @@
         <br>
 
 
-        <%= link_to "Buy ETH", new_buy_path, id: "buyethereum", :style=>'color: white; background-color: #199087; padding: 3px 8px 3px 8px;
-  border-top: 1px solid #199087;
-  border-right: 1px solid #199087;
-  border-bottom: 1px solid #199087;
-  border-left: 1px solid #199087;
-  border-radius: 5px;' %>
+        <%= link_to "Buy ETH", new_buy_path, id: "buyethereum", :class=>"button-buy" %>
 
       </div>
 
@@ -154,12 +139,7 @@
           <input type="text" name="amount" style="width: 100px; color: black" id="ethsellprice"><br>
         </form>
         <br>
-        <%= link_to "Sell ETH", new_buy_path, :style=>'color: white; background-color: #199087; padding: 2px 6px 2px 6px;
-  border-top: 1px solid #199087;
-  border-right: 1px solid #199087;
-  border-bottom: 1px solid #199087;
-  border-left: 1px solid #199087;
-  border-radius: 5px;' %>
+        <%= link_to "Sell ETH", new_buy_path, :class=>"button-sell" %>
       </div>
 
   </div>
@@ -185,12 +165,7 @@
         <br>
 
 
-        <%= link_to "Buy BCH", new_buy_path, id: "buybch", :style=>'color: white; background-color: #199087; padding: 3px 8px 3px 8px;
-  border-top: 1px solid #199087;
-  border-right: 1px solid #199087;
-  border-bottom: 1px solid #199087;
-  border-left: 1px solid #199087;
-  border-radius: 5px;' %>
+        <%= link_to "Buy BCH", new_buy_path, id: "buybch", :class=>"button-buy" %>
 
       </div>
 
@@ -206,12 +181,7 @@
           <input type="text" name="amount" style="width: 100px; color: black" id="bchsellprice"><br>
         </form>
         <br>
-        <%= link_to "Sell BCH", new_buy_path, :style=>'color: white; background-color: #199087; padding: 2px 6px 2px 6px;
-  border-top: 1px solid #199087;
-  border-right: 1px solid #199087;
-  border-bottom: 1px solid #199087;
-  border-left: 1px solid #199087;
-  border-radius: 5px;' %>
+        <%= link_to "Sell BCH", new_buy_path, :class=>"button-sell" %>
       </div>
 
   </div>
@@ -237,12 +207,7 @@
         <br>
 
 
-        <%= link_to "Buy XRP", new_buy_path, id: "buyxrp", :style=>'color: white; background-color: #199087; padding: 3px 8px 3px 8px;
-  border-top: 1px solid #199087;
-  border-right: 1px solid #199087;
-  border-bottom: 1px solid #199087;
-  border-left: 1px solid #199087;
-  border-radius: 5px;' %>
+        <%= link_to "Buy XRP", new_buy_path, id: "buyxrp", :class=>"button-sell" %>
 
       </div>
 
@@ -258,12 +223,7 @@
           <input type="text" name="amount" style="width: 100px; color: black" id="xrpsellprice"><br>
         </form>
         <br>
-        <%= link_to "Sell XRP", new_buy_path, :style=>'color: white; background-color: #199087; padding: 2px 6px 2px 6px;
-  border-top: 1px solid #199087;
-  border-right: 1px solid #199087;
-  border-bottom: 1px solid #199087;
-  border-left: 1px solid #199087;
-  border-radius: 5px;' %>
+        <%= link_to "Sell XRP", new_buy_path, :class=>"button-sell" %>
       </div>
 
   </div>
@@ -271,7 +231,7 @@
   </div>
 
 
-  <div class="carousel-cell">
+  <div class="carousel-cell eos">
     <%= image_tag "eos.svg", alt: "EOS Icon", width: 70 %>
     <h4>EOS</h4>
 
@@ -290,12 +250,7 @@
         <br>
 
 
-        <%= link_to "Buy EOS", new_buy_path, id: "buyeos", :style=>'color: white; background-color: #199087; padding: 3px 8px 3px 8px;
-  border-top: 1px solid #199087;
-  border-right: 1px solid #199087;
-  border-bottom: 1px solid #199087;
-  border-left: 1px solid #199087;
-  border-radius: 5px;' %>
+        <%= link_to "Buy EOS", new_buy_path, id: "buyeos", :class=>"button-buy" %>
 
       </div>
 
@@ -323,12 +278,7 @@ buyeos.addEventListener('click', storeeosbuy);
           <input type="text" name="amount" style="width: 100px; color: black" id="eossellprice"><br>
         </form>
         <br>
-        <%= link_to "Sell EOS", new_buy_path, :style=>'color: white; background-color: #199087; padding: 2px 6px 2px 6px;
-  border-top: 1px solid #199087;
-  border-right: 1px solid #199087;
-  border-bottom: 1px solid #199087;
-  border-left: 1px solid #199087;
-  border-radius: 5px;' %>
+        <%= link_to "Sell EOS", new_buy_path, :class=>"button-sell" %>
       </div>
 
   </div>

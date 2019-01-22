@@ -6,24 +6,38 @@ https://flickity.metafizzy.co
 body { font-family: 'Nunito', sans-serif; }
 
 .carousel {
-  background: #f3f3f3;
+  background: #fbfbfb;;
 }
 
 .carousel-cell {
   width: 28%;
-  height: 425px;
-  margin-right: 10px;
-  background: white;
+  height: 430px;
+  /*margin-right: 10px;*/
+  margin: 50px 30px 50px 0;
+
+  /*background: white;*/
   /*border: 2px solid #66dac7;*/
   border-radius: 20px;
   text-align: center;
   padding: 20px;
-  background-color: #2e4158;
-  color: white;
+  /*background-image: radial-gradient(#004e92, #000428);*/
+  /*background-color: #2e4158;*/
+  background: #fdfdfd;
+  color: black;
+  box-shadow: 0 0 30px rgba(141,151,158,0.33);
 
   /*counter-increment: gallery-cell;*/
 
 }
+/*
+.carousel-cell.eth {
+  background-image: radial-gradient(#004e92, #000428);
+}
+
+.carousel-cell.eos {
+  background-image: radial-gradient(#004e92, #000428);
+}*/
+
 
 .carousel-cell.size-180 { width: 180px; }
 .carousel-cell.size-large { width: 75%; }

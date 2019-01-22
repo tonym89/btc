@@ -139,7 +139,7 @@ https://flickity.metafizzy.co
 }
 
 body {
-  background-color: #f3f3f3;
+  background-color: #fbfbfb;
   color: black;
   font-family: 'Nunito', sans-serif;
 }
@@ -147,10 +147,14 @@ body {
 h1 {
   font-family: 'Nunito', sans-serif;
   text-align: center;
+
 }
 
 h4 {
-  border-bottom: 1px solid #199087;
+  border-bottom: 1px solid #000428;
+  padding-bottom: 5px;
+  // font-style: oblique;
+  font-size: 30px;
 }
 
 .grid {
@@ -160,7 +164,59 @@ h4 {
 }
 
 .buy-section{
-  border-right: 1px solid #199087;
+  border-right: 1px solid #000428;
+}
+
+.button-buy{
+  // background-image: LINEAR-GRADIENT(135DEG, #F4873D, #EC165A);
+
+  background-image: LINEAR-GRADIENT(135DEG, #02aab0, #00cdac);
+  color: white;
+   // margin-top: 100px;
+
+  padding: 5px 12px 5px 12px;
+  // border-top: 1px solid #199087;
+  // border-right: 1px solid #199087;
+  // border-bottom: 1px solid #199087;
+  // border-left: 1px solid #199087;
+  border-radius: 5px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+
+.button-buy:hover {
+  // background-color: #EC165A;
+
+  background-image: LINEAR-GRADIENT(135DEG, #00cdac, #00cdac);
+  color: white;
+    text-decoration: none;
+
+}
+
+.button-sell{
+  // background-image: LINEAR-GRADIENT(135DEG, #F4873D, #EC165A);
+
+  background-image: LINEAR-GRADIENT(135DEG, #F4873D, #EC165A);
+  color: white;
+
+  padding: 5px 12px 5px 12px;
+
+  // padding: 10px 24px 10px 24px;
+  // border-top: 1px solid #199087;
+  // border-right: 1px solid #199087;
+  // border-bottom: 1px solid #199087;
+  // border-left: 1px solid #199087;
+  border-radius: 5px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+
+.button-sell:hover {
+  // background-color: #EC165A;
+  background-image: LINEAR-GRADIENT(135DEG, #EC165A, #EC165A);
+  color: white;
+    text-decoration: none;
+
 }
 
 
