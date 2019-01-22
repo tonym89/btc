@@ -29,6 +29,10 @@ body { font-family: 'Nunito', sans-serif; }
   /*counter-increment: gallery-cell;*/
 
 }
+@media screen and ( max-width: 768px ) {
+  /* half-width cells for larger devices */
+  .carousel-cell { width: 80%; }
+}
 /*
 .carousel-cell.eth {
   background-image: radial-gradient(#004e92, #000428);
