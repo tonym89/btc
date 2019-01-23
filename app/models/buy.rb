@@ -4,6 +4,8 @@ class Buy < ApplicationRecord
 
 require 'httparty'
 
+private
+
 def self.btc_buy_price
   url = 'https://api.kraken.com/0/public/Ticker?pair=XXBTZEUR'
   response = HTTParty.get(url)

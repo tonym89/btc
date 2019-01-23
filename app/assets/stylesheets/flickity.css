@@ -25,6 +25,10 @@ body { font-family: 'Nunito', sans-serif; }
   background: #fdfdfd;
   color: black;
   box-shadow: 0 0 30px rgba(141,151,158,0.33);
+  input {
+  text-align: center;
+  border: 1px solid grey;
+  }
 
   /*counter-increment: gallery-cell;*/
 
