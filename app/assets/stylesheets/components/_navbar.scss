@@ -1,7 +1,8 @@
 /* Main navbar */
 .navbar-wagon {
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
-  background-image: LINEAR-GRADIENT(135DEG, #000428, #004e92);
+  background-color: #fdfdfd;
+  // background-image: LINEAR-GRADIENT(135DEG, #000428, #004e92);
   transition: all 0.3s ease;
   height: 70px;
   padding: 0px 30px;
@@ -40,8 +41,8 @@
 
 /* Navbar link */
 .navbar-wagon-link {
-  color: white;
-  font-size: 14px;
+  color: black;
+  font-size: 15px;
   font-family: 'Nunito', sans-serif;
 }
 .navbar-wagon-link:hover {

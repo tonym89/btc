@@ -8,12 +8,20 @@
 
 </script>
 
+ <div class="container">
+  <div class="row" >
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+
+      <div class="form-buy">
+
 
 <%= form_for(@buy) do |f| %>
   <div class="form-group">
 
     <%= f.label :token %>
+    <br>
     <%= f.select(:token, [['Bitcoin', 1], ['Ethereum', 2], ['Bitcoin Cash', 3], ['Ripple', 4], ['EOS', 5] ], {}, id: "defaultToken") %>
+    <br>
 
     <%= f.label :quantity %>
     <%= f.text_field :quantity, id: "defaultQuantity", class: 'form-control' %>
@@ -28,8 +36,13 @@
     <!-- <%= f.text_field :token, class: 'form-control' %> -->
   </div>
 
-  <%= f.submit 'Place Order', class: 'btn btn-primary' %>
+  <%= f.submit 'Place Order', class: 'btn' %>
 <% end %>
+
+ </div>
+
+  </div>
+</div>
 
 <h2>bitcoin price: </h2><h2 id = "buy1"><%= Buy.btc_buy_price %></h2>
 
