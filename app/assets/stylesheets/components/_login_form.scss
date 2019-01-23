@@ -1,6 +1,6 @@
-.form-edit {
+.form-login {
   background: #fdfdfd;
-  padding: 10px 20px;
+  padding: 20px 20px;
   margin-top: 50px;
   margin-bottom:50px;
   border-radius: 15px;
@@ -15,7 +15,7 @@
     border-bottom: 1px solid #000428;
   }
   .btn {
-    width: 100%;
+    // width: 100%;
     margin-bottom: 20px;
     color: white;
     background-image: LINEAR-GRADIENT(135DEG, #F4873D, #EC165A);
@@ -25,13 +25,20 @@
   .btn:hover{
     background-image: LINEAR-GRADIENT(135DEG, #EC165A, #EC165A);
   }
+
 }
 
+.button-signup {
+    width: 100% !important;
 
-// a.123 {
-//   display: block;
-//     position: relative;
-//     top: -250px;
-//     visibility: hidden;
-
-// }
+    // margin-bottom: 20px;
+    color: white;
+    background-image: LINEAR-GRADIENT(135DEG, #02aab0, #00cdac);
+    padding: 3px 8px 3px 8px;
+    border-radius: 5px;
+  }
+  .button-signup:hover{
+   background-image: LINEAR-GRADIENT(135DEG, #00cdac, #00cdac);
+   text-decoration: none;
+   color: white;
+  }

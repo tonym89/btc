@@ -1,3 +1,8 @@
+<div class="container">
+  <div class="row" >
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <div class="form-signup">
+
 <h2>Sign up</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -15,15 +20,23 @@
     <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
-    <%= f.input :selfie %>
+   <!--  <%= f.input :selfie %>
     <%= f.input :selfie_cache, as: :hidden %>
         <%= f.input :document %>
-    <%= f.input :document_cache, as: :hidden %>
+    <%= f.input :document_cache, as: :hidden %> -->
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
+    <%= f.button :submit, "Sign up", :style=>"color: white; background-image: LINEAR-GRADIENT(135DEG, #02aab0, #00cdac);" %>
   </div>
 <% end %>
+<p>Already have an account?</p>
 
-<%= render "devise/shared/links" %>
+<%- if controller_name != 'sessions' %>
+  <%= link_to "Log in", new_session_path(resource_name), :class=>"button-sell" %><br />
+<% end -%>
+
+</div>
+       </div>
+  </div>
+</div>
