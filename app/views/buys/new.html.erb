@@ -5,15 +5,14 @@
     defaultToken.value = `${localStorage.getItem("currency")}`;
 },);
 
-
 </script>
+
 
  <div class="container">
   <div class="row" >
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
 
       <div class="form-buy">
-
 
 <%= form_for(@buy) do |f| %>
   <div class="form-group">
@@ -22,15 +21,30 @@
     <br>
     <%= f.select(:token, [['Bitcoin', 1], ['Ethereum', 2], ['Bitcoin Cash', 3], ['Ripple', 4], ['EOS', 5] ], {}, id: "defaultToken") %>
     <br>
+    <p>Current price: £<span id = "btcbuyprice"></span></p>
 
     <%= f.label :quantity %>
     <%= f.text_field :quantity, id: "defaultQuantity", class: 'form-control' %>
+<!--
+    <form>
+          BTC:<br>
+          <input type="text" name="amount" value=1 text-align="right" style="width: 100px; color: black" id="quantity"><br>
+    </form> -->
+
+    Cost:<br>
+    <input type="text" name="amount" value=1 text-align="right" style="width: 100px; color: black" id="cost"><br>
+
+
+
+
+    <!-- <form>
+          £:<br>
+          <input type="text" name="amount" style="width: 100px; color: black" id="btcbuyprice"><br>
+    </form> -->
 
     <%= f.label :wallet, 'Wallet Address' %>
     <%= f.text_field :wallet, class: 'form-control' %>
     <p>Create a wallet</p>
-
-
 
 
     <!-- <%= f.text_field :token, class: 'form-control' %> -->
@@ -47,6 +61,80 @@
 <h2>bitcoin price: </h2><h2 id = "buy1"><%= Buy.btc_buy_price %></h2>
 
 <script>
+  //  window.onload = function() {
+  // setInterval(setprice, 10);
+  // }
+  // window.onload = function() {
+  // setInterval(setprice, 10000);
+  // };
+
+  const token = document.getElementById('defaultToken')
+
+    document.addEventListener("DOMContentLoaded", function() {
+  setInterval(setPrice, 10);
+});
+    token.addEventListener("change", function() {
+  setPrice();
+});
+
+
+
+
+const btcbuyprice = document.getElementById('btcbuyprice');
+
+    function setPrice(){
+    if (token.value == 1){
+
+    setBtcPrice()
+    } else if (token.value == 2){
+    btcbuyprice.innerHTML = 'eth'
+    }
+    else if (token.value == 3){
+    btcbuyprice.innerHTML = 'bch'
+    }
+    else if (token.value == 4){
+    btcbuyprice.innerHTML = 'xrp'
+    }
+    else if (token.value == 5){
+    btcbuyprice.innerHTML = 'eos'
+    }
+  };
+
+  function setBtcPrice(){
+  fetch("https://api.kraken.com/0/public/Ticker?pair=XXBTZEUR")
+  .then(response => response.json())
+  .then((data) => {
+    const price = data.result.XXBTZEUR.c[0]*1.025;
+    console.log(price);
+    // window.pbuy = (parseFloat(price)*1.025).toFixed(2);
+    // window.psell = (parseFloat(price)*0.98).toFixed(2);
+    console.log("hello");
+    btcbuyprice.innerHTML = parseFloat(price).toFixed(2)
+    // console.log(pbuy)
+    // buy.innerHTML = window.pbuy;
+    // sell.innerHTML = window.psell;
+
+    // document.getElementById("btcbuyprice").value = ` ${(btcquantity.value * window.pbuy).toFixed(2)}`;
+
+    // document.getElementById("btcsellprice").value = ` ${(btcsellquantity.value * window.psell).toFixed(2)}`;
+
+    // document.getElementById("btcbuyprice").placeholder = window.pbuy;
+    // btcbuyprice.placeholder = window.pbuy;
+
+  });
+}
+
+
+//   if (token.value === '1') {
+//     console.log('you said coke!');
+// } else {
+//     console.log('why didn\'t you say coke!?');
+// }
+
+</script>
+
+<!--
+<script>
     window.onload = function() {
   setInterval(increment, 10000);
 };
@@ -59,7 +147,7 @@ function increment(){
   .then(response => response.json())
   .then((data) => {
     // console.log(data.result.XXBTZEUR.c[0]);
-    const price = data.result.XXBTZEUR.c[0];
+    const price = data.result.XXBTZEUR.c[0] ;
     console.log(price);
     console.log(price * 1.025)
     buy1.innerHTML = price;
@@ -72,3 +160,4 @@ function increment(){
 }
 
   </script>
+ -->

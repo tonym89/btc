@@ -1,6 +1,8 @@
 import "bootstrap";
 import {} from 'jquery-ujs'
 
+
+
 //= require jquery
 //= require jquery_ujs
 
