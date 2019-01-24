@@ -11,7 +11,7 @@ def self.btc_buy_price
   response = HTTParty.get(url)
   response.parsed_response
   kraken_price = response.parsed_response["result"]["XXBTZEUR"]["c"][0].to_f
-  buy_price = (kraken_price * 1.025)
+  buy_price = (kraken_price * 1.025).round(2)
 end
 
 def self.eth_buy_price
@@ -19,7 +19,7 @@ def self.eth_buy_price
   response = HTTParty.get(url)
   response.parsed_response
   kraken_price = response.parsed_response["result"]["XETHZEUR"]["c"][0].to_f
-  buy_price = (kraken_price * 1.025)
+  buy_price = (kraken_price * 1.025).round(2)
 end
 
 def self.bch_buy_price
@@ -27,7 +27,7 @@ def self.bch_buy_price
   response = HTTParty.get(url)
   response.parsed_response
   kraken_price = response.parsed_response["result"]["BCHEUR"]["c"][0].to_f
-  buy_price = (kraken_price * 1.025)
+  buy_price = (kraken_price * 1.025).round(2)
 end
 
 def self.xrp_buy_price
@@ -35,7 +35,7 @@ def self.xrp_buy_price
   response = HTTParty.get(url)
   response.parsed_response
   kraken_price = response.parsed_response["result"]["XXRPZEUR"]["c"][0].to_f
-  buy_price = (kraken_price * 1.025)
+  buy_price = (kraken_price * 1.025).round(2)
 end
 
 def self.eos_buy_price
@@ -43,7 +43,7 @@ def self.eos_buy_price
   response = HTTParty.get(url)
   response.parsed_response
   kraken_price = response.parsed_response["result"]["EOSEUR"]["c"][0].to_f
-  buy_price = (kraken_price * 1.025)
+  buy_price = (kraken_price * 1.025).round(2)
 end
 
 end
