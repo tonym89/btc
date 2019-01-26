@@ -100,7 +100,7 @@
 
     document.addEventListener("DOMContentLoaded", function() {
     setPrice();
-    setInterval(setPrice, 1000);
+    setInterval(setPrice, 10000);
 });
 
     buyprice.addEventListener
@@ -161,6 +161,7 @@
       });
     }
 
+
     function setEthPrice(){
   fetch("https://api.kraken.com/0/public/Ticker?pair=XETHZEUR")
   .then(response => response.json())
@@ -216,23 +217,23 @@
       });
     }
 
-    function setXrpPrice(){
-  fetch("https://api.kraken.com/0/public/Ticker?pair=XXRPZEUR")
-  .then(response => response.json())
-  .then((data) => {
+  //   function setXrpPrice(){
+  // fetch("https://api.kraken.com/0/public/Ticker?pair=XXRPZEUR")
+  // .then(response => response.json())
+  // .then((data) => {
 
-    // if (new_price != window.price){
-    window.price = data.result.XXRPZEUR.c[0]*1.025;
-    buyprice.innerHTML = parseFloat(window.price).toFixed(2);
-    console.log(window.price);
-      if (window.userState == "cost"){
-        updateQuantity();
-      }
-      else{
-        updateCost();
-      }
-      });
-    }
+  //   // if (new_price != window.price){
+  //   window.price = data.result.XXRPZEUR.c[0]*1.025;
+  //   buyprice.innerHTML = parseFloat(window.price).toFixed(2);
+  //   console.log(window.price);
+  //     if (window.userState == "cost"){
+  //       updateQuantity();
+  //     }
+  //     else{
+  //       updateCost();
+  //     }
+  //     });
+  //   }
 
 
     function setEosPrice(){

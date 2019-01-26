@@ -41,13 +41,21 @@ fetch("https://swapi.co/api/people/")
 <div id='welcome2'>
   <span>Welcome</span>
 </div> -->
+<div class="container">
+  <div class="row" >
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <div class="form-buy">
 
-
-<h2>Id: <%= @buy.id %></h2>
-<p>quantity: <%= @buy.quantity %></p>
-<p>price: £<%= @buy.price %> </p>
-<p>Token: <%= @buy.token %> </p>
-<p>Wallet Address: <%= @buy.wallet %> </p>
-
-<p><%= @buy %></p>
-
+          <!-- <h2>Id: <%= @buy.id %></h2> -->
+          <h2>Order Placed</h2>
+          <p>Quantity: <%= @buy.quantity %></p>
+          <p>Price: £<%= @buy.price %> </p>
+          <p>Token: <%= @buy.token %> </p>
+          <p>Wallet Address: <%= @buy.wallet %> </p>
+          <!-- <p><%= @buy %></p> -->
+          <p>Please send payment to:
+          Bank Details</p>
+      </div>
+    </div>
+  </div>
+</div>
