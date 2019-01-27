@@ -15,6 +15,9 @@
 
 
       <h2 >Account Details</h2>
+
+      <p> Name </p>
+      <p><%=@user.first_name %> <%=@user.last_name %> </p>
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.error_notification %>
 
@@ -23,6 +26,7 @@
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     <% end %>
+
 
     <%= f.input :password,
                 hint: "leave it blank if you don't want to change it",
