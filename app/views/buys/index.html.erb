@@ -1,7 +1,73 @@
+<div class="container">
+  <div class="row" >
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+      <div class="form-buy">
+        <h2>Trade History</h2>
+        <div style="overflow-x:auto;">
+        <table class="trade-history" style="width:100%">
+  <tr>
+    <th>Date</th>
+    <th>Token</th>
+    <th>Quantity</th>
+    <th>Price</th>
+    <th>Total Cost</th>
+    <th>Status</th>
+  </tr>
+  <% @buys.each do |buy| %>
+  <tr>
+    <td><%= buy.created_at %></td>
+    <td>
+     <% if buy.token == 1 %>
+            Bitcoin
+            <% elsif buy.token == 2 %>
+            Ethereum
+            <% elsif buy.token == 3 %>
+            Bitcoin Cash
+            <% elsif buy.token == 4 %>
+            Ripple
+            <% elsif buy.token == 5 %>
+            EOS
+            <% else %>
+            Error - please contact support
+            <% end %>
+          </td>
+    <td>£<%= buy.price %></td>
+    <td><%= buy.quantity %></td>
+    <td>£<%= buy.quantity * buy.price %></td>
+    <td><%= buy.status %></td>
 
+  </tr>
+  <% end %>
+  </table>
+</div>
+
+
+  <!-- <tr>
+    <td>Jill</td>
+    <td>Smith</td>
+    <td>50</td>
+  </tr>
+  <tr>
+    <td>Eve</td>
+    <td>Jackson</td>
+    <td>94</td>
+  </tr>
+</table>
+
+ <table style="width:100%">
+  <tr>
+    <th>Firstname</th>
+    <th>Lastname</th>
+    <th>Age</th>
+  </tr>
 
 <% @buys.each do |buy| %>
   <h2><%= buy.quantity %></h2>
   <p><%= buy.id %></p>
 <% end %>
 
+ -->
+      </div>
+    </div>
+  </div>
+</div>
