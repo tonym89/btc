@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get 'users/index'
   get 'users/new'
   get 'users/create'
+  get 'pages/profile'
   # get 'users/edit'
   get 'users/update'
   devise_for :users, controllers: {
