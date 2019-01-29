@@ -46,15 +46,95 @@ fetch("https://swapi.co/api/people/")
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
       <div class="form-buy">
 
-          <!-- <h2>Id: <%= @buy.id %></h2> -->
-          <h2>Order Placed</h2>
-          <p>Quantity: <%= @buy.quantity %></p>
+          <h2>Payment Details</h2>
+
+          <p>Please send payment of £<%= @buy.quantity * @buy.price %> to the following account.  Your cryptocurrency will be sent to your wallet as soon as the payment hits our bank account.</p>
+
+          <table style="width:100%; border: 2px solid black;">
+  <tr style="border: 2px solid black; ">
+    <td style="border: 2px solid black; padding: 15px;">Account name</td>
+    <td style="padding: 15px;">Anthony McShane</td>
+  </tr>
+  <tr style="border: 2px solid black;">
+    <td style="border: 2px solid black; padding: 15px;">Account number</td>
+    <td style="padding: 15px;">88279426</td>
+  </tr>
+  <tr style="border: 2px solid black;">
+    <td style="border: 2px solid black; padding: 15px;">Account sort code</td>
+    <td style="padding: 15px;">08-92-73</td>
+  </tr>
+  <tr style="border: 2px solid black;">
+    <td style="border: 2px solid black; padding: 15px;">Reference</td>
+    <td style="padding: 15px;">FG2021<%= @buy.id %></td>
+  </tr>
+</table>
+ <h2>Order Details</h2>
+ <table style="width:100%; border: 2px solid black;">
+   <tr style="border: 2px solid black; ">
+    <td style="border: 2px solid black; padding: 15px;">Token</td>
+    <td style="padding: 15px;">
+            <% if @buy.token == 1 %>
+            Bitcoin
+            <% elsif @buy.token == 2 %>
+            Ethereum
+            <% elsif @buy.token == 3 %>
+            Bitcoin Cash
+            <% elsif @buy.token == 4 %>
+            Ripple
+            <% elsif @buy.token == 5 %>
+            EOS
+            <% else %>
+            Error - please contact support
+            <% end %></td>
+  </tr>
+  <tr style="border: 2px solid black; ">
+    <td style="border: 2px solid black; padding: 15px;">Quantity</td>
+    <td style="padding: 15px;"><%= @buy.quantity %></td>
+  </tr>
+  <tr style="border: 2px solid black;">
+    <td style="border: 2px solid black; padding: 15px;">Price</td>
+    <td style="padding: 15px;">£<%= @buy.price %></td>
+  </tr>
+  <tr style="border: 2px solid black;">
+    <td style="border: 2px solid black; padding: 15px;">Total Cost</td>
+    <td style="padding: 15px;">£<%= @buy.quantity * @buy.price %></td>
+  </tr>
+   <tr style="border: 2px solid black;">
+    <td style="border: 2px solid black; padding: 15px;">Wallet Address:</td>
+    <td style="padding: 15px;"><%= @buy.wallet %></td>
+  </tr>
+</table>
+
+<!--
+          <p>Quantity:
+            <% if @buy.quantity == 1 %>
+            <p>Bitcoin</p>
+            <% elsif @buy.quantity == 2 %>
+            <p>Ethereum</p>
+            <% elsif @buy.quantity == 3 %>
+            <p>Bitcoin Cash</p>
+            <% elsif @buy.quantity == 4 %>
+            <p>Ripple</p>
+            <% elsif @buy.quantity == 5 %>
+            <p>EOS</p>
+            <% else %>
+            <p>Error - please contact support</p>
+            <% end %>
+
+          </p>
+
           <p>Price: £<%= @buy.price %> </p>
           <p>Token: <%= @buy.token %> </p>
-          <p>Wallet Address: <%= @buy.wallet %> </p>
+          <p>Wallet Address: <%= @buy.wallet %> </p> -->
+         <!--  <p>Account name: Anthony McShane</p>
+          <p>Account number: 88279426</p>
+          <p>Account sort code: 08-92-73</p> -->
+
+          <!-- <h2>Id: <%= @buy.id %></h2> -->
+
           <!-- <p><%= @buy %></p> -->
-          <p>Please send payment to:
-          Bank Details</p>
+
+
       </div>
     </div>
   </div>

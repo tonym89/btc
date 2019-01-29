@@ -14,19 +14,19 @@
       <div class="form-edit">
 
 
-      <h2 >Account Details</h2>
+     <!--  <h2 >Account Details</h2>
 
       <p> Name </p>
-      <p><%=@user.first_name %> <%=@user.last_name %> </p>
+      <p><%=@user.first_name %> <%=@user.last_name %> </p> -->
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.error_notification %>
 
-    <%= f.input :email, required: true %>
+    <!-- <%= f.input :email, required: true %> -->
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     <% end %>
-
+<!--
 
     <%= f.input :password,
                 hint: "leave it blank if you don't want to change it",
@@ -34,17 +34,17 @@
                 input_html: { autocomplete: "new-password" } %>
     <%= f.input :password_confirmation,
                 required: false,
-                input_html: { autocomplete: "new-password" } %>
+                input_html: { autocomplete: "new-password" } %> -->
 
-    <br>
+    <!-- <br> -->
     <h2 id="details">Identity Verification</h2>
 
 
       <% if @user.kyc_status == false && @user.selfie? &&  @user.document? %>
-      <p>Your identity docments are currently being processed.  We aim to process all documents within 1 hour. </p>
+      <p style="text-align: justify;">Your identity documents are currently being reviewed.  We aim to process all documents within 1 hour. </p>
 
       <% elsif @user.kyc_status == true %>
-      <p>Your identity has been verified</p>
+      <p>Your identity has been successfully verified.</p>
       <% else %>
        <p>In order to protect our customers from fraud, we require 2 verification photos to be submitted before trading:</p>
       <ol>
@@ -56,20 +56,23 @@
     <%= f.input :selfie %>
     <%= f.input :selfie_cache, as: :hidden %>
 
-      <% end %>
-
-
-
     <%= f.input :current_password,
                 hint: "Enter your current password to confirm changes",
                 required: true,
                 input_html: { autocomplete: "current-password" } %>
 
 
-
     <div class="form-actions">
     <%= f.button :submit, "Update", :class=>"button-update" %>
   </div>
+
+      <% end %>
+
+
+
+
+
+
   </div>
 
 
