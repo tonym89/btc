@@ -37,7 +37,7 @@
                 input_html: { autocomplete: "new-password" } %> -->
 
     <!-- <br> -->
-    <h2 id="details">Identity Verification</h2>
+    <h2 id="details" >Identity Verification</h2>
 
 
       <% if @user.kyc_status == false && @user.selfie? &&  @user.document? %>
@@ -57,7 +57,7 @@
     <%= f.input :selfie_cache, as: :hidden %>
 
     <%= f.input :current_password,
-                hint: "Enter your current password to confirm changes",
+                hint: "Enter your password to confirm update",
                 required: true,
                 input_html: { autocomplete: "current-password" } %>
 
