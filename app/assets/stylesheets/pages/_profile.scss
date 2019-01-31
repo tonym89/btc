@@ -2,9 +2,14 @@
   border: 1px solid black;
   border-collapse: collapse;
 }
+th {
+  background: #6100FB;
+  color: white;
+}
 th, td {
   padding: 5px;
   text-align: left;
 }
-tr:nth-child(even) {background: #CCC}
+tr:nth-child(even) {background: #f1f1f1}
 tr:nth-child(odd) {background: #FFF}
+
