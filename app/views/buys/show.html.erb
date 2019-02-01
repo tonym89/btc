@@ -51,7 +51,7 @@ fetch("https://swapi.co/api/people/")
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;">Payment Details</h2>
 
-          <p>Please send payment of £<%= @buy.quantity * @buy.price %> to the following account.  Your cryptocurrency will be sent to your wallet as soon as the payment hits our bank account.</p>
+          <p>Please send payment of €<%= @buy.quantity * @buy.price %> to the following account.  Your cryptocurrency will be sent to your wallet as soon as the payment hits our bank account.</p>
           <div style="overflow-x:auto;">
 
           <table style="width:100%; border: 2px solid black;">
@@ -102,11 +102,11 @@ fetch("https://swapi.co/api/people/")
   </tr>
   <tr style="border: 2px solid black;">
     <td style="border: 2px solid black; padding: 15px;">Price</td>
-    <td style="padding: 15px;">£<%= @buy.price %></td>
+    <td style="padding: 15px;">€<%= @buy.price %></td>
   </tr>
   <tr style="border: 2px solid black;">
     <td style="border: 2px solid black; padding: 15px;">Total Cost</td>
-    <td style="padding: 15px;">£<%= @buy.quantity * @buy.price %></td>
+    <td style="padding: 15px;">€<%= @buy.quantity * @buy.price %></td>
   </tr>
    <tr style="border: 2px solid black;">
     <td style="border: 2px solid black; padding: 15px;">Wallet Address:</td>
@@ -133,7 +133,7 @@ fetch("https://swapi.co/api/people/")
 
           </p>
 
-          <p>Price: £<%= @buy.price %> </p>
+          <p>Price: €<%= @buy.price %> </p>
           <p>Token: <%= @buy.token %> </p>
           <p>Wallet Address: <%= @buy.wallet %> </p> -->
          <!--  <p>Account name: Anthony McShane</p>
