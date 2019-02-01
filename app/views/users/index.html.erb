@@ -15,3 +15,49 @@
   <p><%= link_to "Edit", edit_user_path(user.id) %></p>
 <% end %>
 
+
+<h1>Buy Orders</h1>
+<% ary = Array.new %>
+<% @users.each do |user| %>
+    <% user.buys.each do |buy| %>
+      <% ary.push(buy) %>
+    <% end %>
+  <% end %>
+<p><% ary = ary.sort_by{ |buy| buy.created_at } %></p>
+
+<table class="trade-history" style="width:70%">
+<% ary.each do |buy| %>
+  <tr style="border: 2px solid black; ">
+    <td style="border: 2px solid black: "><%= buy.id %></td>
+    <td>€<%= buy.created_at %></td>
+    <td style="padding: 2px;"><%= buy.quantity %></td>
+    <td>€<%= buy.price %></td>
+    <td>
+     <% if buy.token == 1 %>
+            Bitcoin
+            <% elsif buy.token == 2 %>
+            Ethereum
+            <% elsif buy.token == 3 %>
+            Bitcoin Cash
+            <% elsif buy.token == 4 %>
+            Ripple
+            <% elsif buy.token == 5 %>
+            EOS
+            <% else %>
+            Error - please contact support
+            <% end %>
+     </td>
+
+    <td><%= buy.wallet %></td>
+    <td><%= buy.user.email %></td>
+    <td><%= buy.user.first_name%> <%=buy.user.last_name %></td>
+
+    <td><%= buy.status %></td>
+  </tr>
+  <% end %>
+</table>
+
+
+
+<!-- <p><%= ary.last.token %></p> -->
+
