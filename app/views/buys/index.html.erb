@@ -12,7 +12,6 @@
     <th>Date</th>
     <th>Token</th>
     <th>Quantity</th>
-    <th>Price</th>
     <th>Total Cost</th>
     <th>Status</th>
   </tr>
@@ -34,8 +33,8 @@
             Error - please contact support
             <% end %>
           </td>
-    <td>€<%= buy.price %></td>
     <td><%= buy.quantity %></td>
+    <td>€<%= buy.price %></td>
     <td>€<%= buy.quantity * buy.price %></td>
     <td><%= buy.status %></td>
 
