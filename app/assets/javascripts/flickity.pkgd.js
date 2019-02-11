@@ -16,6 +16,7 @@
  */
 
 /* jshint browser: true, strict: true, undef: true, unused: true */
+document.getElementById("flick").addEventListener('touchmove', function(e) { e.preventDefault(); }, { passive: false });
 
 $carousel.on( 'dragStart.flickity', function( event, pointer ) {
     document.ontouchmove = function (e) {
