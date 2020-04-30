@@ -6,7 +6,7 @@
     "bootstrap": "3",
     "cryptocurrency-icons": "^0.9.3",
     "flickity": "^2.1.2",
-    "jquery": "^3.3.1",
+    "jquery": "^3.5.0",
     "jquery-ujs": "^1.2.2"
   },
   "devDependencies": {
